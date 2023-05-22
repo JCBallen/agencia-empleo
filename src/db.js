@@ -1,10 +1,10 @@
 import x from 'pg'
-const { Pool } = x
+const { Pool } = x // un poco xd pero no deja extraer directamente el Pool del import pg
 
 export const pool = new Pool({
-    user: 'postgres',
-    password: '12345',
     host: '34.148.210.176',
     port: '5432',
+    user: 'postgres',
+    password: '12345',
     database: 'taller2'
 })
