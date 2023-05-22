@@ -1,17 +1,30 @@
 import { Router } from "express";
-import { toIndex,toRegistro, registrarDB } from "../controllers/controller.js";
+import {
+    toIndex,
+    toRegistro,
+    toHome,
+    toEmpresa,
+    toProcesos,
+    registrarDB
+} from "../controllers/controller.js";
 
 
 const router = Router();
 
 
-router.get('/', toIndex )
+router.get('/', toIndex)
 
-router.get('/index', toIndex )
+router.get('/index', toIndex)
 
-router.get('/registro',toRegistro )
+router.get('/registro', toRegistro)
 
-router.post('/registro', registrarDB )
+router.get('/home', toHome)
+
+router.get('/empresa', toEmpresa)
+
+router.get('/procesos', toProcesos)
+
+router.post('/registro', registrarDB)
 
 
 export default router
