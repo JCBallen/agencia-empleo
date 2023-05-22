@@ -6,10 +6,11 @@ import { pool } from './db.js'
 
 const app = express()
 
+// Seteando EJS como motor de vistas
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 app.set('views', join(__dirname, 'views'))
-app.set('view engine', 'ejs') // para que el servidor sepa que vamos a usar ejs como motor de plantillas
+app.set('view engine', 'ejs') // para que el servidor sepa que vamos a usar ejs como motor de vistas
 
 
 
@@ -23,7 +24,6 @@ app.get('/', async (req, res) => {
         console.log(e)
     }
 })
-
 
 app.listen(process.env.PORT || 3000)
 
