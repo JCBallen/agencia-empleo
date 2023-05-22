@@ -6,6 +6,9 @@ const contenidoDiv = document.getElementById('lo-demás');
 const select = document.querySelector('#select');
 const opciones = document.querySelector('#opciones');
 const contenidoSelect = document.querySelector('#select .contenido-select');
+const select1 = document.querySelector('#select1');
+const opciones1 = document.querySelector('#opciones1');
+const contenidoSelect1 = document.querySelector('#select1 .contenido-select1');
 const hiddenInput1 = document.querySelector('#inputSelect1');
 const hiddenInput2 = document.querySelector('#inputSelect2');
 
@@ -74,15 +77,29 @@ checkbox2.addEventListener('change', function() {
   }
 });
 
+// Escoger Pais Desempleado
+document.querySelectorAll('#opciones1 > .opcion1').forEach((opcion) => {
+  opcion.addEventListener('click', (e) => {
+      e.preventDefault();
+      contenidoSelect1.innerHTML = e.currentTarget.innerHTML;
+      select1.classList.toggle('active');
+      opciones1.classList.toggle('active');
+      hiddenInput1.value = e.currentTarget.querySelector('.opcionPais1').innerText;
+  });
+});
 
-// Escoger Pais
+select1.addEventListener('click', () => {
+  select1.classList.toggle('active');
+  opciones1.classList.toggle('active');
+});
+
+// Escoger Pais Empresa
 document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
     opcion.addEventListener('click', (e) => {
         e.preventDefault();
         contenidoSelect.innerHTML = e.currentTarget.innerHTML;
         select.classList.toggle('active');
         opciones.classList.toggle('active');
-        hiddenInput1.value = e.currentTarget.querySelector('.opcionPais').innerText;
         hiddenInput2.value = e.currentTarget.querySelector('.opcionPais').innerText;
     });
 });
