@@ -2,7 +2,7 @@
 import express from 'express' // esta wea hace todo el web server
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
-import { pool } from './db.js'
+import rutas from './routes/route.js'
 
 const app = express()
 
@@ -12,18 +12,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 app.set('views', join(__dirname, 'views'))
 app.set('view engine', 'ejs') // para que el servidor sepa que vamos a usar ejs como motor de vistas
 
+app.use(rutas)
 
-
-app.get('/', async (req, res) => {
-    try {
-        const query = await pool.query("select * from employee where midinit='I'")
-        console.log(query.rows)
-        const data = JSON.stringify(query.rows)
-        res.render('index', { title: 'Yo y los homies', data: data })
-    } catch (e) {
-        console.log(e)
-    }
-})
+app.use(express.static(join(__dirname, 'public'))) // para que el servidor sepa que la carpeta public es de archivos estaticos (css, js, imagenes, etc
 
 app.listen(process.env.PORT || 3000)
 
