@@ -1,4 +1,3 @@
-import e from 'express'
 import { pool } from '../db.js'
 
 export const toIndex = (req, res) => res.render('index')

@@ -2,6 +2,7 @@
 import express from 'express' // framework web server
 import morgan from 'morgan' // ver las peticiones que se hacen al servidor
 import session from 'express-session' // para manejar sesiones
+import flash from 'connect-flash' // para manejar mensajes flash
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import rutas from './routes/route.js'
