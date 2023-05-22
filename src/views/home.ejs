@@ -22,17 +22,9 @@
 </head>
 
 <body>
-  <header class="nav">
-    <div class="navbar1">
-      <ul>
-        <li><a href="Registro.html">Registrate</a></li>
-        <li><a class="cta" href="index.html">Inicia Sesión</a></li>
-      </ul>
-    </div>
-    <nav class="navbar2">
-      <a href="homeAgencia.html"><img class="logo" src="https://i.ibb.co/4pFfZzz/Logo-Agencia.png" alt="logo"></a>
-    </nav>
-  </header>
+  <%- include("components/navbarAgencia")%>
+  <%- include("components/navbarDesempleado")%>
+  <%- include("components/navbarEmpresa")%>
   <div class="wrapper">
     <!--== Start Hero Area Wrapper ==-->
     <section class="home-slider-area">
@@ -501,15 +493,7 @@
   <!--=== jQuery Custom Js ===-->
   <script src="assets/js/custom.js"></script>
 
-  <footer>
-    <div class="wave" style="height: 63px; overflow: hidden;">
-      <p>Julie Ibarra - Juan Ballén<br>Bases de Datos, 2023-1.</p>
-      <svg viewBox="0 0 300 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-        <path d="M-1.41,0.50 C112.02,0.50 254.22,143.58 500.84,68.58 L500.00,150.00 L0.00,150.00 Z"
-          style="stroke: none; fill: #000000;"></path>
-      </svg>
-    </div>
-  </footer>
+  <%- include("components/footer")%>
 </body>
 
 </html>

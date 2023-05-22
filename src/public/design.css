@@ -61,7 +61,7 @@ input.input:focus, input.inputn:focus{
 .btn {
     border: 2px solid #FFBB00;
     padding: 6px 21px;
-    border-radius: 30px;
+    border-radius: 6px;
     font-size: 15px;
     font-weight: bold;
     color: #000000;
@@ -140,6 +140,10 @@ input.input:focus, input.inputn:focus{
  .navbar1 li a {
      color: white;
  }
+
+ .navbar1 li a:hover {
+  color: rgb(165, 165, 165);
+}
  
  .navbar1 b {
      color: rgba(255, 170, 1, 1);
@@ -242,9 +246,13 @@ input.input:focus, input.inputn:focus{
      padding: 3px 9px;
      background-color: #FFBB00;
      border: none;
-     border-radius: 12px;
+     border-radius: 6px;
      cursor: pointer; 
      transition: all 0.3s ease 0s;
+ }
+
+ .navbar1 a.cta:hover{
+  color: #f0f0f0;
  }
 
  .navbar2 a.cta{
@@ -307,7 +315,7 @@ footer {
   display: flex;
   justify-content: end;
   flex-direction: column;
-  border-radius: 21px 0 0 21px;
+  border-radius: 6px 0 0 6px;
 }
 
 .item h2{
@@ -327,11 +335,11 @@ footer {
   margin-top: 27px;
   width: 50%;
   height: 589px;
-  background: url(https://i.ibb.co/thw6z6f/Background.png) no-repeat;
+  background: url(https://i.ibb.co/vqc235r/Bogot.png) no-repeat;
   background-position: center;
   background-size: cover;
   padding: 80px;
-  border-radius: 0 21px 21px 0;
+  border-radius: 0 6px 6px 0;
 }
 
 .login-section .form-box-login{
@@ -341,9 +349,9 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba( 255, 255, 255, 0.3 );
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 21px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 6px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding: 0px 40px;
 }
@@ -355,9 +363,9 @@ footer {
   width: 100%;
   height: 429px;
   background: rgba( 255, 255, 255, 0.3 );
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 21px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 6px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding: 393px 40px 40px 40px;
   overflow-y: auto;
@@ -1052,7 +1060,7 @@ table p {
 .btn-theme {
   background-color: #ffbb00;
   border: 1px solid #ffbb00;
-  border-radius: 39px;
+  border-radius: 6px;
   color: #000000;
   font-weight: bold;
   display: inline-block;
@@ -2416,7 +2424,8 @@ table p {
 .recent-job-item .main-content .title a {
   color: #272a33;
   display: flex;
-  justify-content: center;
+  font-style: normal;
+  font-weight: bold;
 }
 .recent-job-item .main-content .title a:hover {
   color: #ffbb00;
