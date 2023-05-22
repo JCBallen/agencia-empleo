@@ -2,7 +2,9 @@ import { Router } from "express";
 import {
     toIndex,
     toRegistro,
-    toHome,
+    toHomeAgencia,
+    toHomeDesempleado,
+    toHomeEmpresa,
     toEmpresa,
     toProcesos,
     registrarDB
@@ -18,11 +20,17 @@ router.get('/index', toIndex)
 
 router.get('/registro', toRegistro)
 
-router.get('/home', toHome)
+router.get('/homeAgencia', toHomeAgencia)
+
+router.get('/homeDesempleado', toHomeDesempleado)
+
+router.get('/homeEmpresa', toHomeEmpresa)
 
 router.get('/empresa', toEmpresa)
 
 router.get('/procesos', toProcesos)
+
+// ! Procesos con la base de datos
 
 router.post('/registro', registrarDB)
 

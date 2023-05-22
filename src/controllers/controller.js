@@ -4,7 +4,11 @@ export const toIndex = (req, res) => res.render('index')
 
 export const toRegistro = (req, res) =>   res.render('registro')
 
-export const toHome = (req, res) => res.render('home')
+export const toHomeAgencia = (req, res) => res.render('homeAgencia')
+
+export const toHomeDesempleado = (req, res) => res.render('homeDesempleado')
+
+export const toHomeEmpresa = (req, res) => res.render('homeEmpresa')
 
 export const toEmpresa = (req, res) => res.render('empresa')
 
