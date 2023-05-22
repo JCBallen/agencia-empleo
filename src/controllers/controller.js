@@ -1,8 +1,12 @@
 import { pool } from '../db.js'
 
-export const toIndex = (req, res) => res.render('index')
 
-export const toRegistro = (req, res) =>   res.render('registro')
+export const toIndex = (req, res) => {
+    // const aux = req.flash('user')[0]
+    // console.log(aux)
+    res.render('index')
+}
+export const toRegistro = (req, res) => res.render('registro')
 
 export const toHomeAgencia = (req, res) => res.render('homeAgencia')
 
@@ -15,12 +19,63 @@ export const toEmpresa = (req, res) => res.render('empresa')
 export const toProcesos = (req, res) => res.render('procesos')
 
 
-export const registrarDB = (req, res) => { 
-    const formData = req.body
-    req.session.user = formData.nombre
+export const registrarDB = async (req, res) => {
+    console.log(req.body)
+    req.flash('user', req.body)
 
-    console.log(formData, 'from req.body')
-    console.log(req.session.user, 'from req.session.user')
-    console.log(formData.nombre)
-    res.redirect('/')
+    const {
+        tipo,
+        nombre,
+        profesion,
+        telefono,
+        direccion,
+        salario,
+        pais,
+        cv,
+        video,
+        usuarioCorreo,
+        contrasena,
+        nombreE,
+        nitE,
+        razonSocialE,
+        representanteE,
+        telefonoE,
+        direccionE,
+        sedeE,
+        paisE,
+        empresaCorreo,
+        contrasenaE
+    } = req.body
+
+    if (tipo === 'desempleado') {
+        const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random()*5), null, null, null])
+
+        const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccion, pais])
+
+        const actualizacion1 = await pool.query('UPDATE Desempleado SET idUbicacion = $1 WHERE iddesempleado = $2 RETURNING *', [insercion2.rows[0].idubicacion, insercion1.rows[0].iddesempleado])
+
+        const insercion3 = await pool.query('INSERT INTO HojaVida (link) VALUES ($1) RETURNING *', [cv])
+
+        const actualizacion2 = await pool.query('UPDATE Desempleado SET idHojaVida = $1 WHERE iddesempleado = $2 RETURNING *', [insercion3.rows[0].idhojavida, insercion1.rows[0].iddesempleado])
+
+        const insercion4 = await pool.query('INSERT INTO Video (link) VALUES ($1) RETURNING *', [video])
+
+        const actualizacion3 = await pool.query('UPDATE Desempleado SET idVideo = $1 WHERE iddesempleado = $2 RETURNING *', [insercion4.rows[0].idvideo, insercion1.rows[0].iddesempleado])
+
+    }
+
+    if (tipo === 'empresa') {
+        const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random()*5), null, null])
+
+        const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccionE, paisE])
+
+        const actualizacion1 = await pool.query('UPDATE Empresa SET idUbicacion = $1 WHERE nit = $2 RETURNING *', [insercion2.rows[0].idubicacion, insercion1.rows[0].nit])
+
+        const insercion3 = await pool.query('INSERT INTO Sede (nombreSede, idUbicacion) VALUES ($1, $2) RETURNING *', [sedeE,insercion2.rows[0].idubicacion])
+
+        const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
+    }
+
+    // res.redirect('/') //! temporal, no olvidar quitarlo
+    res.send('ok')
 }

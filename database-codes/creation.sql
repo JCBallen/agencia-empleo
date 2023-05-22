@@ -13,8 +13,8 @@ CREATE DATABASE agencia_empleo;
 
 CREATE TABLE Ubicacion (
 	idUbicacion SERIAL PRIMARY KEY,
-	pais VARCHAR(50),
-	ciudad VARCHAR(50)
+	direccion VARCHAR(50),
+	pais VARCHAR(50)
 );
 
 CREATE TABLE Sede (
@@ -44,13 +44,13 @@ CREATE TABLE Video (
 );
 
 CREATE TABLE Empresa (
-	nit INT PRIMARY KEY,
+	nit BIGINT PRIMARY KEY,
 	usuarioEmpresa VARCHAR(50),
 	contrasenaEmpresa VARCHAR(50),
 	nombreEmpresa VARCHAR(50),
 	razonSocial VARCHAR(50),
 	representanteLegal VARCHAR(50),
-	telefonoEmpresa INT,
+	telefonoEmpresa BIGINT,
 	puntuacionEmpresa INT,
 	idUbicacion INT,
 	idSede INT,
@@ -79,7 +79,7 @@ CREATE TABLE Desempleado (
 	contrasenaDesempleado VARCHAR(50),
 	nombreDesempleado VARCHAR,
 	profesion VARCHAR(50),
-	telefonoDesempleado INT,
+	telefonoDesempleado BIGINT,
 	salario INT,
 	puntuacionDesempleado INT,
 	idUbicacion INT,

@@ -6,5 +6,5 @@ export const pool = new Pool({
     port: '5432',
     user: 'postgres',
     password: '12345',
-    database: 'taller2'
+    database: 'agencia_empleo'
 })
