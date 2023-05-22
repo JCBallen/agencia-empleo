@@ -13,12 +13,12 @@ app.set('view engine', 'ejs') // para que el servidor sepa que vamos a usar ejs 
 
 
 
-app.get('/about', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const query = await pool.query("select * from employee where midinit='I'")
         console.log(query.rows)
         const data = JSON.stringify(query.rows)
-        res.render('index', { title: 'Home', data: data })
+        res.render('index', { title: 'Yo y los homies', data: data })
     } catch (e) {
         console.log(e)
     }
