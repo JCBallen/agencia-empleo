@@ -20,8 +20,6 @@ export const toProcesos = (req, res) => res.render('procesos')
 
 
 export const registrarDB = async (req, res) => {
-    console.log(req.body)
-    req.flash('user', req.body)
 
     const {
         tipo,
@@ -48,6 +46,9 @@ export const registrarDB = async (req, res) => {
     } = req.body
 
     if (tipo === 'desempleado') {
+        console.log(req.body.nombre, ', desempleado')
+        req.flash('user', req.body.nombre)
+
         const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random()*5), null, null, null])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccion, pais])
@@ -65,6 +66,9 @@ export const registrarDB = async (req, res) => {
     }
 
     if (tipo === 'empresa') {
+        console.log(req.body.nombreE, ', empresa')
+        req.flash('user', req.body.nombreE)
+
         const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random()*5), null, null])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccionE, paisE])
@@ -76,6 +80,6 @@ export const registrarDB = async (req, res) => {
         const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
     }
 
-    // res.redirect('/') //! temporal, no olvidar quitarlo
-    res.send('ok')
+    res.redirect('/') //! temporal, no olvidar quitarlo
+    // res.send('ok')
 }
