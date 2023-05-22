@@ -292,7 +292,7 @@ footer {
 
 .is-contenedor{
   display: flex;
-  min-height: calc(100vh - (122px + 50px));
+  min-height: calc(100vh - (122px + 69px));
   padding: 60px 80px;
   color: #000000;
 }
