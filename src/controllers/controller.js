@@ -6,4 +6,6 @@ export const toRegistro = (req, res) => {
     res.render('registro')
 }
 
-export const registrarDB = async (req, res) => { }
+export const registrarDB = async (req, res) => { 
+    console.log(req.body)
+}
