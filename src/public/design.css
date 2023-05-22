@@ -373,13 +373,13 @@ footer {
   display: flex;
 }
 
-.form-box-login .input-box, .form-box-signin .input-box, .form-box-signin .input-box-select{
+.form-box-login .input-box, .form-box-signin .input-box, .form-box-signin .input-box-select, .form-box-signin .input-box-select1{
   height: 60px;
   border-bottom: 2px solid #000000;
   margin: 30px 0;
 }
 
-.input-box input, .input-box-select input{
+.input-box input, .input-box-select input, .input-box-select1 input{
   width: 100%;
   background:transparent;
   border: none;
@@ -389,11 +389,11 @@ footer {
   transition: .5s ease;
 }
 
-.input-box-select {
+.input-box-select, .input-box-select1 {
   position: relative;
 }
 
-.select {
+.select, .select1 {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -402,7 +402,7 @@ footer {
   z-index: 200;
 }
 
-.select.active:before{
+.select.active:before, .select1.active:before{
   content: "";
   display: block;
   height: 0;
@@ -416,11 +416,11 @@ footer {
   left: calc(50% - 15px);
 }
 
-.select i{
+.select i, .select1 i{
   font-size: 24px;
 }
 
-.opciones {
+.opciones, .opciones1{
   background: #EDEDED;
   border-radius: 9px;
   box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.15);
@@ -431,15 +431,15 @@ footer {
   display: none;
 }
 
-.opciones.active{
+.opciones.active, .opciones1.active{
   display: block;
 }
 
-.opciones .contenido-opcion:hover{
+.opciones .contenido-opcion:hover, .opciones1 .contenido-opcion1:hover{
   background: #c8c8c8 ;
 }
 
-.opcionPais{
+.opcionPais, .opcionPais1{
   color: #000000;
 }
 
