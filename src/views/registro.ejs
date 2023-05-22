@@ -59,11 +59,43 @@
                 <div class="lo-demás"><b></b></div>
               </label><input type="text" name="nombre">
             </div>
-            <div class="input-box">
-              <span class="icon"><i class='bx bxs-user-detail'></i></span>
-              <label for=""><b>Profesión</b>
-                <div class="lo-demás"><b></b></div>
-              </label><input type="text" name="profesion" >
+            <div class="input-box-select2">
+              <span class="icon"><i class='bx bxs-map'></i></span>
+              <label for=""><b>Profesion</b></label><br>
+              <div class="select2" id="select2">
+                <div class="contenido-select2">
+                  <p>Selecciona</p>
+                </div>
+                <i class='bx bx-chevron-down'></i>
+              </div>
+              <div class="opciones2" id="opciones2">
+                <a href="#" class="opcion2">
+                  <div class="contenido-opcion2">
+                    <p class="opcionProfesion">Ingenieria en Multimedia</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion2">
+                  <div class="contenido-opcion2">
+                    <p class="opcionProfesion">Medicina</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion2">
+                  <div class="contenido-opcion2">
+                    <p class="opcionProfesion">Diseñador Gráfico</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion2">
+                  <div class="contenido-opcion2">
+                    <p class="opcionProfesion">Lenguas Modernas</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion2">
+                  <div class="contenido-opcion2">
+                    <p class="opcionProfesion">Economia</p>
+                  </div>
+                </a>
+              </div>
+              <input type="hidden" name="profesion" id="inputSelect2" value="">
             </div>
             <div class="input-box">
               <span class="icon"><i class='bx bxs-phone'></i></span>
@@ -84,7 +116,7 @@
                 </div>
                 <i class='bx bx-chevron-down'></i>
               </div>
-              <div class="opciones1" id="opciones1">
+              <div class="opciones1" id="opciones1" style="position: inherit; z-index: 300;">
                 <a href="#" class="opcion1">
                   <div class="contenido-opcion1">
                     <p class="opcionPais1">Bogotá, CO</p>
@@ -92,6 +124,44 @@
                 </a>
               </div>
               <input type="hidden" name="pais" id="inputSelect1" value="">
+            </div>
+            <div class="input-box-select4">
+              <span class="icon"><i class='bx bxs-credit-card' ></i></span>
+              <label for=""><b>Salario Deseado</b></label>
+              <div class="select4" id="select4">
+                <div class="contenido-select4">
+                  <p>Selecciona</p>
+                </div>
+                <i class='bx bx-chevron-down'></i>
+              </div>
+              <div class="opciones4" id="opciones4">
+                <a href="#" class="opcion4">
+                  <div class="contenido-opcion4">
+                    <p class="opcionSalario">$0 - $2.000.000</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion4">
+                  <div class="contenido-opcion4">
+                    <p class="opcionSalario">$2.000.000 - $4.000.000</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion4">
+                  <div class="contenido-opcion4">
+                    <p class="opcionSalario">$4.000.000 - $6.000.000</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion4">
+                  <div class="contenido-opcion4">
+                    <p class="opcionSalario">$6.000.000 - $8.000.000</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion4">
+                  <div class="contenido-opcion4">
+                    <p class="opcionSalario">$8.000.000 - $10.000.000</p>
+                  </div>
+                </a>
+              </div>
+              <input type="hidden" name="salario" id="inputSelect4" value="">
             </div>
             <div class="input-box">
               <span class="icon"><i class='bx bxs-spreadsheet'></i></span>
@@ -150,10 +220,38 @@
               <label for=""><b>Direccion</b></label>
               <input name="direccionE" type="text">
             </div>
-            <div class="input-box">
-              <span class="icon"><i class='bx bxs-buildings'></i></span>
-              <label for=""><b>Sede</b></label>
-              <input name="sedeE" type="text">
+            <div class="input-box-select3">
+              <span class="icon"><i class='bx bxs-map'></i></span>
+              <label for=""><b>Sede</b></label><br>
+              <div class="select3" id="select3">
+                <div class="contenido-select3">
+                  <p>Selecciona</p>
+                </div>
+                <i class='bx bx-chevron-down'></i>
+              </div>
+              <div class="opciones3" id="opciones3" style="position: inherit; z-index: 300;">
+                <a href="#" class="opcion3">
+                  <div class="contenido-opcion3">
+                    <p class="opcionSede">Norte</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion3">
+                  <div class="contenido-opcion3">
+                    <p class="opcionSede">Sur</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion3">
+                  <div class="contenido-opcion3">
+                    <p class="opcionSede">Occidente</p>
+                  </div>
+                </a>
+                <a href="#" class="opcion3">
+                  <div class="contenido-opcion3">
+                    <p class="opcionSede">Oriente</p>
+                  </div>
+                </a>
+              </div>
+              <input type="hidden" name="sedeE" id="inputSelect3" value="">
             </div>
             <div class="input-box-select">
               <span class="icon"><i class='bx bxs-map'></i></span>
@@ -181,7 +279,7 @@
                   </div>
                 </a>
               </div>
-              <input type="hidden" name="paisE" id="inputSelect2" value="">
+              <input type="hidden" name="paisE" id="inputSelect" value="">
             </div>
             <div class="input-box">
               <span class="icon"><i class='bx bxs-envelope'></i></span>

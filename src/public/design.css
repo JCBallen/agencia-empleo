@@ -366,13 +366,13 @@ footer {
   display: flex;
 }
 
-.form-box-login .input-box, .form-box-signin .input-box, .form-box-signin .input-box-select, .form-box-signin .input-box-select1{
+.form-box-login .input-box, .form-box-signin .input-box, .input-box-select, .input-box-select1, .input-box-select2,  .input-box-select3,  .input-box-select4,  .input-box-select5{
   height: 60px;
   border-bottom: 2px solid #000000;
   margin: 30px 0;
 }
 
-.input-box input, .input-box-select input, .input-box-select1 input{
+.input-box input, .input-box-select input, .input-box-select1 input, .input-box-select2 input, .input-box-select3 input, .input-box-select4 input, .input-box-select5 input{
   width: 100%;
   background:transparent;
   border: none;
@@ -382,11 +382,12 @@ footer {
   transition: .5s ease;
 }
 
-.input-box-select, .input-box-select1 {
+.input-box-select, .input-box-select1, .input-box-select2, .input-box-select3, .input-box-select4, .input-box-select5{
   position: relative;
+  margin: 0 60px;
 }
 
-.select, .select1 {
+.select, .select1, .select2, .select3, .select4, .select5{
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -395,7 +396,7 @@ footer {
   z-index: 200;
 }
 
-.select.active:before, .select1.active:before{
+.select.active:before, .select1.active:before, .select2.active:before, .select3.active:before, .select4.active:before, .select5.active:before{
   content: "";
   display: block;
   height: 0;
@@ -409,11 +410,11 @@ footer {
   left: calc(50% - 15px);
 }
 
-.select i, .select1 i{
+.select i, .select1 i, .select2 i, .select3 i, .select4 i, .select5 i{
   font-size: 24px;
 }
 
-.opciones, .opciones1{
+.opciones, .opciones1, .opciones2, .opciones3, .opciones4, .opciones5{
   background: #EDEDED;
   border-radius: 9px;
   box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.15);
@@ -424,15 +425,15 @@ footer {
   display: none;
 }
 
-.opciones.active, .opciones1.active{
+.opciones.active, .opciones1.active, .opciones2.active, .opciones3.active, .opciones4.active, .opciones5.active{
   display: block;
 }
 
-.opciones .contenido-opcion:hover, .opciones1 .contenido-opcion1:hover{
+.opciones .contenido-opcion:hover, .opciones1 .contenido-opcion1:hover, .opciones2 .contenido-opcion2:hover, .opciones3 .contenido-opcion3:hover, .opciones4 .contenido-opcion4:hover, .opciones5 .contenido-opcion5:hover{
   background: #c8c8c8 ;
 }
 
-.opcionPais, .opcionPais1{
+.opcionPais, .opcionPais1, .opcionProfesion, .opcionSede, .opcionSalario{
   color: #000000;
 }
 
@@ -1534,14 +1535,24 @@ table p {
   Section Title CSS
 -----------------------------------------------------------------------
 */
-.section-title {
-  margin-bottom: 56px;
+
+.widget-categories button{
+  margin: 15px 30px 0px 30px;
+  font-size: 18px;
+  border: 2px solid #ff9600;
+  padding: 4px 39px;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ff9600;
+  cursor: pointer;
 }
-@media only screen and (max-width: 1199px) {
-  .section-title {
-    margin-bottom: 42px;
-  }
+
+.widget-categories button:hover{
+  background-color: #ff9600;
+  color: #ffffff;
 }
+
+
 .section-title .title {
   font-size: 30px;
   margin-bottom: 12px;
@@ -1556,6 +1567,9 @@ table p {
   .section-title .title {
     font-size: 25px;
     margin-bottom: 6px;
+  }
+  .widget-categories button{
+    width: 180px;
   }
 }
 .section-title .desc p {
@@ -1984,7 +1998,6 @@ table p {
   font-size: 50px;
   font-weight: 900;
   line-height: 1.3;
-  margin-bottom: 21px;
 }
 @media only screen and (max-width: 1199px) {
   .home-slider-container .slider-content-area .slider-content .title {
@@ -2767,6 +2780,11 @@ table p {
   Working Process CSS
 -----------------------------------------------------------------------
 */
+
+.icon-img, .icon-hover{
+  width: 30px;
+}
+
 @media only screen and (max-width: 1199px) {
   .work-process-area .container {
     padding-bottom: 44px;
@@ -2864,14 +2882,6 @@ table p {
 }
 .working-process-item .icon-box .inner .icon-hover {
   opacity: 0;
-}
-.working-process-item .content {
-  margin-top: 34px;
-}
-@media only screen and (max-width: 1199px) {
-  .working-process-item .content {
-    margin-top: 24px;
-  }
 }
 .working-process-item .title {
   color: #CB262A;
