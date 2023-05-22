@@ -2424,7 +2424,8 @@ table p {
 .recent-job-item .main-content .title a {
   color: #272a33;
   display: flex;
-  justify-content: center;
+  font-style: normal;
+  font-weight: bold;
 }
 .recent-job-item .main-content .title a:hover {
   color: #ffbb00;
