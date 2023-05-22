@@ -182,7 +182,11 @@ input.input:focus, input.inputn:focus{
      font-size: 18px;
      padding: 30px 15px;
  }
- 
+
+ .navbar2-hover:hover{
+  color: #CB262A;
+}
+
  .navbar2 ul ul {
      position: absolute;
      top: 80px;
@@ -220,25 +224,6 @@ input.input:focus, input.inputn:focus{
      color: rgba(11, 18, 96, 1);
  }
  
- .navbar2 .point{
-   position: absolute;
-     padding: 0 50px;
-     top: 15px;
-     opacity: 0%;
-     
-     width: 150px;
-     height: 30px;
-     background: none;
- }
- 
- .navbar2 .point:hover{
-   position: absolute;
-     margin: 0 auto;
-     top: 15px;
-     opacity: 100%;
-     background: none;
- }
- 
  .navbar1 a.cta{
      font-size: 15px;
      color:#000000;
@@ -267,7 +252,7 @@ input.input:focus, input.inputn:focus{
 }
  
  .navbar2 a.cta:hover {
-     background-color: #FFBB00;
+     color: #ffffff;
  } 
  
  .btn-menu, .btn-submenu, .checkbox{
@@ -2427,6 +2412,11 @@ table p {
   font-style: normal;
   font-weight: bold;
 }
+
+.post-item .recent-job-item .main-content .title a{
+  justify-content: center;
+}
+
 .recent-job-item .main-content .title a:hover {
   color: #ffbb00;
 }
