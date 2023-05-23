@@ -1,28 +1,30 @@
 <!-- <!DOCTYPE html>
 <html lang="en-US"> -->
-    <header>
-            <div class="nav1">
-                <div class="nav1-container">
-                 <!--<a href="<?php if($_SESSION['user']=="admin"){echo 'tracking-admin';}else{echo 'drivers';} ?>">-->
-                 <p>Bienvenida <a href="/empresa"><b style="color: #ffffff;">Empresa</a></b><!--<?php echo $_SESSION['user']; ?>!--></p>
-                 <img src="https://i.ibb.co/kSXbdQm/edificio.png" alt="Driver">
-                 <a id=logout href="/logout">Cerrar Sesión</a></div>
-            </div>
-            <nav class="navbar2">
-                <a href="/homeEmpresa"><img class="logo" src="https://i.ibb.co/4pFfZzz/Logo-Agencia.png"></a>
-                    <label for="btn" class="btn-menu">
-                        <span class="material-icons" style="font-size: 50px; margin-top: 12px;">menu</span>
-                    </label>
-                    <input class="checkbox" type="checkbox" id="btn">
-                    <ul>
-                        <li>
-                            <a class="navbar2-hover" href="/procesos">Mis Procesos</a>
-                        </li>
-                        <li>
-                            <a class="cta" href="/agregarVacante">Agregar Vacante</a>
-                        </li>
-                    </ul>         
-            </nav>
-    </header>
+<header>
+    <div class="nav1">
+        <div class="nav1-container">
+            <!--<a href="<?php if($_SESSION['user']=="admin"){echo 'tracking-admin';}else{echo 'drivers';} ?>">-->
+            <p>Bienvenida <a href="/empresa"><b style="color: #ffffff;">
+                        <%= user %></a></b><!--<?php echo $_SESSION['user']; ?>!--></p>
+            <img src="https://i.ibb.co/kSXbdQm/edificio.png" alt="Driver">
+            <a id=logout href="/logout">Cerrar Sesión</a>
+        </div>
+    </div>
+    <nav class="navbar2">
+        <a href="/homeEmpresa"><img class="logo" src="https://i.ibb.co/4pFfZzz/Logo-Agencia.png"></a>
+        <label for="btn" class="btn-menu">
+            <span class="material-icons" style="font-size: 50px; margin-top: 12px;">menu</span>
+        </label>
+        <input class="checkbox" type="checkbox" id="btn">
+        <ul>
+            <li>
+                <a class="navbar2-hover" href="/procesos">Mis Procesos</a>
+            </li>
+            <li>
+                <a class="cta" href="/agregarVacante">Agregar Vacante</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <!-- </body> -->
 <!-- </html> -->

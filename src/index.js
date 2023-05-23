@@ -26,12 +26,11 @@ app.use(session({
 }))
 app.use(flash())
 // ? Aqui ponemos nuestra variables globales que funcionan hasta en el front
-// ! se dejo de usar ya que su llamado elimina el valor de la variable
-// app.use((req, res, next) => {
-//     app.locals.user = req.flash('user')
-
-//     next()
-// })
+// ! se dejo de usar ya que su llamado elimina el valor de las variables 
+app.use((req, res, next) => {
+    app.locals.user = req.flash('user')
+    next()
+})
 
 app.use(rutas)
 app.use(express.static(join(__dirname, 'public'))) // para que el servidor sepa que la carpeta public es de archivos estaticos (css, js, imagenes, etc

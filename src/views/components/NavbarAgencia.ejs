@@ -1,25 +1,28 @@
 <!-- <!DOCTYPE html>
 <html lang="en-US"> -->
-        <header>
-                <div class="nav1">
-                    <div class="nav1-container">
-                     <p>Bienvenido <b>Agente</b></p>
-                     </a>
-                     <img src="https://i.ibb.co/P4jc88X/agente-de-centro-de-llamadas.png" alt="Driver">
-                     <a id=logout href="/logout">Cerrar Sesión</a></div>
-                </div>
-                <nav class="navbar2">
-                    <a href="/homeAgencia"><img class="logo" src="https://i.ibb.co/4pFfZzz/Logo-Agencia.png"></a>
-                        <label for="btn" class="btn-menu">
-                            <span class="material-icons" style="font-size: 50px; margin-top: 12px;">menu</span>
-                        </label>
-                        <input class="checkbox" type="checkbox" id="btn">
-                        <ul>
-                            <li>
-                                <a class="cta" href="/procesos">Mis Procesos</a>
-                            </li>
-                        </ul>         
-                </nav>
-        </header>
-    <!-- </body> -->
-    <!-- </html> -->
+<header>
+    <div class="nav1">
+        <div class="nav1-container">
+            <p>Bienvenido <b>
+                    <%= user %>
+                </b></p>
+            </a>
+            <img src="https://i.ibb.co/P4jc88X/agente-de-centro-de-llamadas.png" alt="Driver">
+            <a id=logout href="/logout">Cerrar Sesión</a>
+        </div>
+    </div>
+    <nav class="navbar2">
+        <a href="/homeAgencia"><img class="logo" src="https://i.ibb.co/4pFfZzz/Logo-Agencia.png"></a>
+        <label for="btn" class="btn-menu">
+            <span class="material-icons" style="font-size: 50px; margin-top: 12px;">menu</span>
+        </label>
+        <input class="checkbox" type="checkbox" id="btn">
+        <ul>
+            <li>
+                <a class="cta" href="/procesos">Mis Procesos</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- </body> -->
+<!-- </html> -->

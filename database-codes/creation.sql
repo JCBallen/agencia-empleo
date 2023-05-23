@@ -111,7 +111,7 @@ CREATE TABLE Agencia (
 -- buscar como insertar joins, ubicacion, cv y video
 INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado)
 VALUES
-('user@gmail.com', 'user_12345', 'USER', 'Usuario', 1234567);
+('user@gmail.com', 'user_12345', 'Jorge', 'Usuario', 1234567);
 
 INSERT INTO Agencia (usuarioAdmin ,contrasenaAdmin)
 VALUES
