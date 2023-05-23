@@ -96,7 +96,7 @@ CREATE TABLE Solicitud (
 	estado BOOLEAN,
 	idVacante INT,
 	idDesempleado INT,
-	nit INT,
+	nit BIGINT,
 	FOREIGN KEY (idVacante) REFERENCES Vacante(idVacante),
 	FOREIGN KEY (idDesempleado) REFERENCES Desempleado(idDesempleado),
 	FOREIGN KEY (nit) REFERENCES Empresa(nit)

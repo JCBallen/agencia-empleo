@@ -96,10 +96,10 @@ export const iniciarSesion = async (req, res) => {
     const peticionAgencia = await pool.query('SELECT * FROM Agencia WHERE usuarioAdmin = $1 AND contrasenaAdmin = $2', [correo, contrasena])
 
     if (peticionDesempleado.rows[0]) {
-        req.flash('user', req.body.nombre)
+        req.flash('user', req.body)
         res.redirect('/homeDesempleado')
     } else if (peticionEmpresa.rows[0]) {
-        req.flash('user', req.body.nombreE)
+        req.flash('user', req.body)
         res.redirect('/homeEmpresa')
     } else if (peticionAgencia.rows[0]) {
         req.flash('user', req.body)
