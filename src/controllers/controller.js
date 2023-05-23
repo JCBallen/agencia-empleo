@@ -1,12 +1,9 @@
-import e from 'connect-flash'
 import { pool } from '../db.js'
 
+// Rutas de la página
 
-export const toIndex = (req, res) => {
-    // const aux = req.flash('user')[0]
-    // console.log(aux)
-    res.render('index')
-}
+export const toIndex = (req, res) => res.render('index')
+
 export const toRegistro = (req, res) => res.render('registro')
 
 export const toHomeAgencia = (req, res) => res.render('homeAgencia')
@@ -21,6 +18,7 @@ export const toProcesos = (req, res) => res.render('procesos')
 
 export const toAgregarVacante = (req, res) => res.render('agregarVacante')
 
+// Rutas con logica (APIs)
 
 export const registrarDB = async (req, res) => {
 
@@ -49,8 +47,6 @@ export const registrarDB = async (req, res) => {
     } = req.body
 
     if (tipo === 'desempleado') {
-        // console.log(req.body.nombre, ', desempleado')
-        // req.flash('user', req.body.nombre)
 
         const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random() * 5), null, null, null])
 
@@ -69,8 +65,6 @@ export const registrarDB = async (req, res) => {
     }
 
     if (tipo === 'empresa') {
-        // console.log(req.body.nombreE, ', empresa')
-        // req.flash('user', req.body.nombreE)
 
         const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random() * 5), null, null])
 
@@ -83,7 +77,8 @@ export const registrarDB = async (req, res) => {
         const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
     }
 
-    res.redirect('/') //! temporal, no olvidar quitarlo
+    res.redirect('/')
+    //! temporal, no olvidar quitarlo
     // res.send('ok')
 }
 
@@ -118,4 +113,15 @@ export const iniciarSesion = async (req, res) => {
 export const cerrarSesion = (req, res) => {
     req.flash('user', '')
     res.redirect('/')
+}
+
+
+export const agregarVacante = async (req, res) => {
+    const { tipo, cargo, fechaInicio, fechaCierre, salario } = req.body
+
+    const insercionVacante = await pool.query('INSERT INTO Vacante (fechaInicio, fechaCierre, cargo, salario, pregradoRequerido, rangoEdad, puntuacionVacante, nit, idUbicacion) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *', [fechaInicio, fechaCierre, cargo, salario, tipo === "Pregrado Requerido" ? true : false, null, null, null, null])
+
+    // console.log(insercionVacante.rows[0])
+    res.redirect('/homeEmpresa')
+    // res.send('ok')
 }

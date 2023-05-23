@@ -1,4 +1,4 @@
-// recuenda activar el nodemon para no tener que estar reiniciando el servidor cada vez que se haga un cambio (npm run dev)
+// recuerda activar el nodemon para no tener que estar reiniciando el servidor cada vez que se haga un cambio (npm run dev)
 import express from 'express' // framework web server
 import morgan from 'morgan' // ver las peticiones que se hacen al servidor
 import session from 'express-session' // para manejar sesiones
@@ -26,7 +26,7 @@ app.use(session({
 }))
 app.use(flash())
 // ? Aqui ponemos nuestra variables globales que funcionan hasta en el front
-// ! se dejo de usar ya que su llamado elimina el valor de las variables 
+// ! se dejo de usar (temporalmente) ya que su llamado elimina el valor de las variables 
 app.use((req, res, next) => {
     app.locals.user = req.flash('user')
     next()
