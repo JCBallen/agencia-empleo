@@ -7,6 +7,7 @@ import {
     toHomeEmpresa,
     toEmpresa,
     toProcesos,
+    toAgregarVacante,
     registrarDB,
     iniciarSesion,
     cerrarSesion
@@ -31,6 +32,8 @@ router.get('/homeEmpresa', toHomeEmpresa)
 router.get('/empresa', toEmpresa)
 
 router.get('/procesos', toProcesos)
+
+router.get('/agregarVacante', toAgregarVacante)
 
 // ! Procesos con la base de datos
 

@@ -19,6 +19,8 @@ export const toEmpresa = (req, res) => res.render('empresa')
 
 export const toProcesos = (req, res) => res.render('procesos')
 
+export const toAgregarVacante = (req, res) => res.render('agregarVacante')
+
 
 export const registrarDB = async (req, res) => {
 
