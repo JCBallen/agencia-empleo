@@ -111,3 +111,9 @@ export const iniciarSesion = async (req, res) => {
     // no dejar esto activo, ya que no se puede redireccionar y enviar una respuesta al mismo tiempo
     // res.send('ok')  // solo testeo de la api
 }
+
+
+export const cerrarSesion = (req, res) => {
+    req.flash('user', '')
+    res.redirect('/')
+}
