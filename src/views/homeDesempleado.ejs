@@ -178,10 +178,10 @@
         <div class="row">
           <div class="col-12">
             <div class="section-title text-center">
-              <h3 class="title">Candidatos</h3>
+              <h3 class="title">Vacantes Recientes</h3>
               <div class="desc">
-                <p style="font-size: 21px;">Aquí podrás encontrar una lista de los candidatos mejores puntuados en la
-                  ciudad de Bogotá.</p>
+                <p style="font-size: 21px;">Aquí podrás encontrar una lista actualizada de oportunidades laborales para
+                  personas residentes en Bogotá.</p>
               </div>
             </div>
           </div>
@@ -193,58 +193,136 @@
               <div class="widget-body">
                 <div class="widget-categories">
                   <div class="input-box-select2">
-                    <div class="icon-filtro-1">
-                      <span><i class='bx bxs-graduation' >
-                        <label for=""><b>Cargo</b><i class='bx bx-chevron-down'></i></label><br>
-                      </i></span>
+                    <span class="icon"><i class='bx bxs-graduation' ></i></span>
+                    <label for=""><b>Cargo</b></label><br>
+                    <div class="select2" id="select2">
+                      <div class="contenido-select2">
+                        <p>Selecciona</p>
+                      </div>
+                      <i class='bx bx-chevron-down'></i>
                     </div>
-                    <div class="buttons">
-                      <button class="button-value">Ingeniero(a)</button>
-                      <button class="button-value">Médico(a)</button>
-                      <button class="button-value">Diseñador(a)</button>
-                      <button class="button-value">Abogado(a)</button>
-                      <button class="button-value">Economista</button>
+                    <div class="opciones2" id="opciones2">
+                      <a href="#" class="opcion2">
+                        <div class="contenido-opcion2">
+                          <p class="opcionProfesion">Ingeniero(a)</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion2">
+                        <div class="contenido-opcion2">
+                          <p class="opcionProfesion">Medico(a)</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion2">
+                        <div class="contenido-opcion2">
+                          <p class="opcionProfesion">Diseñador(a)</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion2">
+                        <div class="contenido-opcion2">
+                          <p class="opcionProfesion">Abogado(a)</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion2">
+                        <div class="contenido-opcion2">
+                          <p class="opcionProfesion">Economista</p>
+                        </div>
+                      </a>
                     </div>
+                    <input type="hidden" name="cargo" id="inputSelect2" value="">
                   </div>
                   <div class="input-box-select4">
-                    <div class="icon-filtro-2">
-                      <span><i class='bx bxs-credit-card' >
-                        <label for=""><b>Salario</b><i class='bx bx-chevron-down'></i></label><br>
-                      </i></span>
+                    <span class="icon"><i class='bx bxs-credit-card' ></i></span>
+                    <label for=""><b>Salario Deseado</b></label>
+                    <div class="select4" id="select4">
+                      <div class="contenido-select4">
+                        <p>Selecciona</p>
+                      </div>
+                      <i class='bx bx-chevron-down'></i>
                     </div>
-                    <div class="buttons1">
-                      <button class="button-value">$0 - $2.000.000</button>
-                      <button class="button-value">$2.000.000 - $4.000.000</button>
-                      <button class="button-value">$4.000.000 - $6.000.000</button>
-                      <button class="button-value">$6.000.000 - $8.000.000</button>
-                      <button class="button-value">$8.000.000 - $10.000.000</button>
+                    <div class="opciones4" id="opciones4">
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$0 - $2.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$2.000.000 - $4.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$4.000.000 - $6.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$6.000.000 - $8.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$8.000.000 - $10.000.000</p>
+                        </div>
+                      </a>
                     </div>
+                    <input type="hidden" name="salario" id="inputSelect4" value="">
                   </div>
                   <div class="input-box-select1">
-                    <div class="icon-filtro-3">
-                      <span><i class='bx bxs-map'>
-                        <label for=""><b>Ubicacion</b><i class='bx bx-chevron-down'></i></label><br>
-                      </i></span>
+                    <span class="icon"><i class='bx bxs-map'></i></span>
+                    <label for=""><b>Ubicacion</b></label><br>
+                    <div class="select1" id="select1">
+                      <div class="contenido-select1">
+                        <p>Selecciona</p>
+                      </div>
+                      <i class='bx bx-chevron-down'></i>
                     </div>
-                    <div class="buttons2">
-                      <button class="button-value">Bogotá, CO</button>
-                      <button class="button-value">New York, USA</button>
-                      <button class="button-value">Montreal, CA</button>
+                    <div class="opciones1" id="opciones1" style="position: inherit; z-index: 300;">
+                      <a href="#" class="opcion1">
+                        <div class="contenido-opcion1">
+                          <p class="opcionPais1">Bogota, CO</p>
+                        </div>
+                      </a>
                     </div>
+                    <input type="hidden" name="pais" id="inputSelect1" value="">
                   </div>
                   <div class="input-box-select5">
-                    <div class="icon-filtro-4">
-                      <span><i class='bx bxs-star' >
-                        <label for=""><b>Puntuación</b><i class='bx bx-chevron-down'></i></label><br>
-                      </i></span>
+                    <span class="icon"><i class='bx bxs-star'></i></span>
+                    <label for=""><b>Puntuacion</b></label>
+                    <div class="select5" id="select5">
+                      <div class="contenido-select5">
+                        <p>Selecciona</p>
+                      </div>
+                      <i class='bx bx-chevron-down'></i>
                     </div>
-                    <div class="buttons3">
-                      <button class="button-value">1 Estrella</button>
-                      <button class="button-value">2 Estrellas</button>
-                      <button class="button-value">3 Estrellas</button>
-                      <button class="button-value">4 Estrellas</button>
-                      <button class="button-value">5 Estrellas</button>
+                    <div class="opciones5" id="opciones5">
+                      <a href="#" class="opcion5">
+                        <div class="contenido-opcion5">
+                          <p class="opcionPuntuacion">1 Estrella</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion5">
+                        <div class="contenido-opcion5">
+                          <p class="opcionPuntuacion">2 Estrellas</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion5">
+                        <div class="contenido-opcion5">
+                          <p class="opcionPuntuacion">3 Estrellas</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion5">
+                        <div class="contenido-opcion5">
+                          <p class="opcionPuntuacion">4 Estrellas</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion5">
+                        <div class="contenido-opcion5">
+                          <p class="opcionPuntuacion">5 Estrellas</p>
+                        </div>
+                      </a>
                     </div>
+                    <input type="hidden" name="puntuacion" id="inputSelect5" value="">
                   </div>
                 </div>
               </div>
@@ -263,18 +341,10 @@
                 <div class="content">
                   <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Bogotá, CO</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>5</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
+                <h3 class="title"><a href="job-details.html">Diseñador(a)</a></h3>
                 <h5 class="degree-yes">Pregrado Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
@@ -299,24 +369,16 @@
                 <div class="content">
                   <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Montreal, CA</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>5</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                <h3 class="title"><a href="job-details.html">Economista</a></h3>
                 <h5 class="degree-no">Pregrado NO Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
               <div class="recent-job-info">
                 <div class="salary">
-                  <h4>1200 CAD</h4>
+                  <h4>4'030.000 COP</h4>
                   <p>/mensual</p>
                 </div>
                 <a class="btn-theme btn-sm" href="job-details.html">Postularse</a>
@@ -335,16 +397,10 @@
                 <div class="content">
                   <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Bogotá, CO</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>3</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                <h3 class="title"><a href="job-details.html">Ingeniero(a)</a></h3>
                 <h5 class="degree-no">Pregrado NO Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
@@ -369,14 +425,10 @@
                 <div class="content">
                   <h4 class="name"><a href="company-details.html">Obelus Concepts</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Bogotá, CO</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>1</b></p>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">UX Researcher</a></h3>
+                <h3 class="title"><a href="job-details.html">Ingeniero(a)</a></h3>
                 <h5 class="degree-yes">Pregrado Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
@@ -401,24 +453,16 @@
                 <div class="content">
                   <h4 class="name"><a href="company-details.html">Sanguine Skincare</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>New York, USA</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>5</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Android App Developer</a></h3>
+                <h3 class="title"><a href="job-details.html">Médico(a)</a></h3>
                 <h5 class="degree-yes">Pregrado Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
               <div class="recent-job-info">
                 <div class="salary">
-                  <h4>800 USD</h4>
+                  <h4>3'630.000 COP</h4>
                   <p>/mensual</p>
                 </div>
                 <a class="btn-theme btn-sm" href="job-details.html">Postularse</a>
@@ -437,23 +481,16 @@
                 <div class="content">
                   <h4 class="name"><a href="company-details.html">Flux Water Gear</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Montreal, CA</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>4</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Product Designer</a></h3>
+                <h3 class="title"><a href="job-details.html">Abogado(a)</a></h3>
                 <h5 class="degree-no">Pregrado NO Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
               <div class="recent-job-info">
                 <div class="salary">
-                  <h4>300 CAD</h4>
+                  <h4>1'000.000 COP</h4>
                   <p>/mensual</p>
                 </div>
                 <a class="btn-theme btn-sm" href="job-details.html">Postularse</a>
@@ -470,23 +507,18 @@
                       alt="Image-HasTech"></a>
                 </div>
                 <div class="content">
-                  <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
+                  <h4 class="name"><a href="company-details.html">Nexus Enterprises</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>New York, USA</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>2</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
+                <h3 class="title"><a href="job-details.html">Economista</a></h3>
                 <h5 class="degree-yes">Pregrado Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
               <div class="recent-job-info">
                 <div class="salary">
-                  <h4>600 USD</h4>
+                  <h4>2'700.000 COP</h4>
                   <p>/mensual</p>
                 </div>
                 <a class="btn-theme btn-sm" href="job-details.html">Postularse</a>
@@ -503,20 +535,12 @@
                       alt="Image-HasTech"></a>
                 </div>
                 <div class="content">
-                  <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                  <h4 class="name"><a href="company-details.html">Innovatech Solutions</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Bogotá, CO</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>5</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                <h3 class="title"><a href="job-details.html">Diseñador(a)</a></h3>
                 <h5 class="degree-yes">Pregrado requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre: <br> Rando Edad: </p>
               </div>
@@ -539,18 +563,12 @@
                       alt="Image-HasTech"></a>
                 </div>
                 <div class="content">
-                  <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
+                  <h4 class="name"><a href="company-details.html">Starlink Industries</a></h4>
                   <p class="address"><i class='bx bxs-map'></i>Bogotá, CO</p>
-                  <div class="rating-box">
-                    <p class="desc" style="line-height: 1; margin-right: 6px;"><b>3</b></p>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                  </div>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                <h3 class="title"><a href="job-details.html">Abogado(a)</a></h3>
                 <h5 class="degree-no">Pregrado NO Requerido</h5>
                 <p class="desc">Fecha Inicio: <br> Fecha Cierre:<br> Rando Edad: </p>
               </div>

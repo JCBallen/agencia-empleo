@@ -1,78 +1,84 @@
-/*const select1 = document.querySelector('.icon-filtro-1');
-const opciones1 = document.querySelector('.buttons');
+const selectPaisDesempleado = document.querySelector('#select1');
+const opcionesPaisDesempleado = document.querySelector('#opciones1');
+const contenidoSelectPaisDesempleado = document.querySelector('#select1 .contenido-select1');
+const hiddenInputPaisDesempleado = document.querySelector('#inputSelect1');
 
-const select2 = document.querySelector('.icon-filtro-2');
-const opciones2 = document.querySelector('.buttons1');
+const selectProfesionDesempleado = document.querySelector('#select2');
+const opcionesProfesionDesempleado = document.querySelector('#opciones2');
+const contenidoSelectProfesionDesempleado = document.querySelector('#select2 .contenido-select2');
+const hiddenInputProfesionDesempleado = document.querySelector('#inputSelect2');
 
-const select3 = document.querySelector('.icon-filtro-3');
-const opciones3 = document.querySelector('.buttons2');
+const selectSalarioDesempleado = document.querySelector('#select4');
+const opcionesSalarioDesempleado = document.querySelector('#opciones4');
+const contenidoSelectSalarioDesempleado = document.querySelector('#select4 .contenido-select4');
+const hiddenInputSalarioDesempleado = document.querySelector('#inputSelect4');
 
-const select4 = document.querySelector('.icon-filtro-4');
-const opciones4 = document.querySelector('.buttons3');
+const selectPuntuacionDesempleado = document.querySelector('#select5');
+const opcionesPuntuacionDesempleado = document.querySelector('#opciones5');
+const contenidoSelectPuntuacionDesempleado = document.querySelector('#select5 .contenido-select5');
+const hiddenInputPuntuacionDesempleado = document.querySelector('#inputSelect5');
 
-
-select1.addEventListener('click', function() {
-    opciones1.style.display = 'flex';
-});
-
-select2.addEventListener('click', function() {
-    opciones2.style.display = 'flex';
-});
-
-select3.addEventListener('click', function() {
-    opciones3.style.display = 'flex';
-});
-
-select4.addEventListener('click', function() {
-    opciones4.style.display = 'flex';
-});*/
-
-/*let candidatos = {
-    data: [
-        {
-            nombre: "Marin Kitagawa",
-            profesion: "Economia",
-            puntuacion: "5",
-            ubicacion: "Bogota, CO.",
-            salario: "",
-        },
-        {
-            nombre: "Izuku Midoriya",
-            profesion: "Ingenieria",
-            puntuacion: "5",
-            ubicacion: "Bogota, CO.",
-            salario: "",
-        },
-        {
-            nombre: "keisuke Baji",
-            profesion: "Derecho",
-            puntuacion: "4",
-            ubicacion: "Bogota, CO.",
-            salario: "",
-        },
-        {
-            nombre: "Ruka Sarashina",
-            profesion: "Medicina",
-            puntuacion: "3",
-            ubicacion: "Bogota, CO.",
-            salario: "",
-        },
-    ],
-};
-
-for(let i of candidatos.data){
-
-}*/
-
-$(document).ready(function(){
-    $('.button-value').click(function(){
-        var categoria = $(this).data('category');
-
-        if (categoria === 'todos'){
-            $('.candidatos').fadeIn();
-        }else{
-            $('.candidatos').fadeOut();
-            $('.candidatos[data-category="' + categoria + '"]').fadeIn();
-        }
+// Filtrar Pais Desempleado
+document.querySelectorAll('#opciones1 > .opcion1').forEach((opcion) => {
+    opcion.addEventListener('click', (e) => {
+        e.preventDefault();
+        contenidoSelectPaisDesempleado.innerHTML = e.currentTarget.innerHTML;
+        selectPaisDesempleado.classList.toggle('active');
+        opcionesPaisDesempleado.classList.toggle('active');
+        hiddenInputPaisDesempleado.value = e.currentTarget.querySelector('.opcionPais1').innerText;
     });
-});
+  });
+  
+  selectPaisDesempleado.addEventListener('click', () => {
+    selectPaisDesempleado.classList.toggle('active');
+    opcionesPaisDesempleado.classList.toggle('active');
+  });
+  
+  // Filtrar Profesion
+  document.querySelectorAll('#opciones2 > .opcion2').forEach((opcion) => {
+    opcion.addEventListener('click', (e) => {
+        e.preventDefault();
+        contenidoSelectProfesionDesempleado.innerHTML = e.currentTarget.innerHTML;
+        selectProfesionDesempleado.classList.toggle('active');
+        opcionesProfesionDesempleado.classList.toggle('active');
+        hiddenInputProfesionDesempleado.value = e.currentTarget.querySelector('.opcionProfesion').innerText;
+    });
+  });
+  
+  selectProfesionDesempleado.addEventListener('click', () => {
+    selectProfesionDesempleado.classList.toggle('active');
+    opcionesProfesionDesempleado.classList.toggle('active');
+  });
+  
+  // Filtrar Salario
+  document.querySelectorAll('#opciones4 > .opcion4').forEach((opcion) => {
+    opcion.addEventListener('click', (e) => {
+        e.preventDefault();
+        contenidoSelectSalarioDesempleado.innerHTML = e.currentTarget.innerHTML;
+        selectSalarioDesempleado.classList.toggle('active');
+        opcionesSalarioDesempleado.classList.toggle('active');
+        hiddenInputSalarioDesempleado.value = e.currentTarget.querySelector('.opcionSalario').innerText;
+    });
+  });
+  
+  selectSalarioDesempleado.addEventListener('click', () => {
+    selectSalarioDesempleado.classList.toggle('active');
+    opcionesSalarioDesempleado.classList.toggle('active');
+  });
+
+  // Filtrar Puntuacion
+  document.querySelectorAll('#opciones5 > .opcion5').forEach((opcion) => {
+    opcion.addEventListener('click', (e) => {
+        e.preventDefault();
+        contenidoSelectPuntuacionDesempleado.innerHTML = e.currentTarget.innerHTML;
+        selectPuntuacionDesempleado.classList.toggle('active');
+        opcionesPuntuacionDesempleado.classList.toggle('active');
+        hiddenInputPuntuacionDesempleado.value = e.currentTarget.querySelector('.opcionPuntuacion').innerText;
+    });
+  });
+  
+  selectPuntuacionDesempleado.addEventListener('click', () => {
+    selectPuntuacionDesempleado.classList.toggle('active');
+    opcionesPuntuacionDesempleado.classList.toggle('active');
+  });
+

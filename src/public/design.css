@@ -366,7 +366,8 @@ footer {
   display: flex;
 }
 
-.form-box-login .input-box, .form-box-signin .input-box, .form-box-signin .input-box-select, .form-box-signin .input-box-select1, .form-box-signin .input-box-select2,  .form-box-signin .input-box-select3,  .form-box-signin .input-box-select4, .form-box-signin .input-box-select5, .form-box-signin .input-box-select2{
+.form-box-login .input-box, .form-box-signin .input-box, .form-box-signin .input-box-select, .form-box-signin .input-box-select1, .form-box-signin .input-box-select2,  .form-box-signin .input-box-select3,  .form-box-signin .input-box-select4, .form-box-signin .input-box-select5, .form-box-signin .input-box-select2, 
+.widget-categories .input-box-select1, .widget-categories .input-box-select2, .widget-categories .input-box-select4, .widget-categories .input-box-select5{
   height: 60px;
   border-bottom: 2px solid #000000;
   margin: 30px 0;
@@ -426,19 +427,20 @@ footer {
   overflow: auto;
   margin-top: 15px;
   padding: 9px;
-  z-index: 100;
+  z-index: 600;
   display: none;
 }
 
 .opciones.active, .opciones1.active, .opciones2.active, .opciones3.active, .opciones4.active, .opciones5.active{
   display: block;
+  position: relative;
 }
 
 .opciones .contenido-opcion:hover, .opciones1 .contenido-opcion1:hover, .opciones2 .contenido-opcion2:hover, .opciones3 .contenido-opcion3:hover, .opciones4 .contenido-opcion4:hover, .opciones5 .contenido-opcion5:hover{
   background: #c8c8c8 ;
 }
 
-.opcionPais, .opcionPais1, .opcionProfesion, .opcionSede, .opcionSalario{
+.opcionPais, .opcionPais1, .opcionProfesion, .opcionSede, .opcionSalario, .opcionPuntuacion, .opcionCandidato, .opcionCargo{
   color: #000000;
 }
 
@@ -2510,7 +2512,7 @@ table p {
 .recent-job-item .recent-job-info .salary h4 {
   color: gray;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 15px;
   line-height: 1;
   margin-bottom: 0;
 }
