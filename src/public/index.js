@@ -173,3 +173,6 @@ select4.addEventListener('click', () => {
   opciones4.classList.toggle('active');
 });
 
+
+
+// funcion pa traer datazos

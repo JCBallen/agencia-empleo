@@ -11,7 +11,8 @@ import {
     registrarDB,
     iniciarSesion,
     cerrarSesion,
-    agregarVacante
+    agregarVacante,
+    consultarVacantes
 } from "../controllers/controller.js";
 
 
@@ -45,6 +46,8 @@ router.post('/login', iniciarSesion) // no existe realmente login en las vistas,
 router.get('/logout', cerrarSesion)
 
 router.post('/agregarVacante', agregarVacante)
+
+router.get('/consultarVacantes', consultarVacantes)
 
 
 export default router

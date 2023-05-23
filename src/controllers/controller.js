@@ -79,7 +79,6 @@ export const registrarDB = async (req, res) => {
         const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
     }
 
-
     //! temporal, no olvidar quitarlo
     // res.send('ok')
 }
@@ -95,13 +94,22 @@ export const iniciarSesion = async (req, res) => {
     const peticionAgencia = await pool.query('SELECT * FROM Agencia WHERE usuarioAdmin = $1 AND contrasenaAdmin = $2', [correo, contrasena])
 
     if (peticionDesempleado.rows[0]) {
-        req.flash('user', peticionDesempleado.rows[0].nombredesempleado)
+        // req.flash('user', peticionDesempleado.rows[0].nombredesempleado)
+        req.session.user = peticionDesempleado.rows[0].nombredesempleado
+        const usuario = req.session.user
+        console.log(usuario)
         res.redirect('/homeDesempleado')
     } else if (peticionEmpresa.rows[0]) {
-        req.flash('user', peticionEmpresa.rows[0].nombreempresa)
+        // req.flash('user', peticionEmpresa.rows[0].nombreempresa)
+        req.session.user = peticionEmpresa.rows[0].nombreempresa
+        const usuario = req.session.user
+        console.log(usuario)
         res.redirect('/homeEmpresa')
     } else if (peticionAgencia.rows[0]) {
-        req.flash('user', "ADMIN")
+        // req.flash('user', "ADMIN")
+        req.session.user = "ADMIN"
+        const usuario = req.session.user
+        console.log(usuario)
         res.redirect('/homeAgencia')
     } else {
         res.redirect('/')
@@ -113,7 +121,10 @@ export const iniciarSesion = async (req, res) => {
 
 
 export const cerrarSesion = (req, res) => {
-    req.flash('user', '')
+    // req.flash('user', '')
+    req.session.user = ""
+    const usuario = req.session.user
+    console.log(usuario)
     res.redirect('/')
 }
 
@@ -125,6 +136,16 @@ export const agregarVacante = async (req, res) => {
 
     const insercionVacante = await pool.query('INSERT INTO Vacante (fechaInicio, fechaCierre, cargo, salario, pregradoRequerido, rangoEdad, puntuacionVacante, nit, idUbicacion) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *', [fechaInicio, fechaCierre, cargo, salario, tipo === "Pregrado Requerido" ? true : false, null, null, null, null])
 
+    const usuario = req.session.user
+    console.log(usuario)
     // console.log(insercionVacante.rows[0])
     // res.send('ok')
+}
+
+
+export const consultarVacantes = async (req, res) => {
+    const peticionVacantes = await pool.query('SELECT * FROM Vacante')
+    const usuario = req.session.user
+    console.log(usuario)
+    res.json(peticionVacantes.rows)
 }
