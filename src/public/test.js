@@ -8,6 +8,8 @@ async function traerVacantes() {
     // return result
 }
 
+traerVacantes();
+
 // const res = traerVacantes()
 
 // setTimeout(() => {
