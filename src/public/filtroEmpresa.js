@@ -67,7 +67,7 @@ document.querySelectorAll('#opciones1 > .opcion1').forEach((opcion) => {
         contenidoSelect3.innerHTML = e.currentTarget.innerHTML;
         select3.classList.toggle('active');
         opciones3.classList.toggle('active');
-        hiddenInput3.value = e.currentTarget.querySelector('.opcionProfesion').innerText;
+        hiddenInput3.value = e.currentTarget.querySelector('.opcionSede').innerText;
     });
   });
   
