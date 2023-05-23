@@ -80,12 +80,24 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" style="display: flex; width: 100%;" >
           <!--== Start Contact Form ==-->
           <div class="vacante-form">
             <h4 class="vacante-form-title">Vacante</h4>
             <form id="vacante-form" action="">
               <div class="row">
+                <div class="input-box" style="border-bottom: 0; margin-bottom: 0;">
+                    <span class="icon"><i class='bx bxs-user-detail'></i></span>
+                    <label for=""><b>¿Pregrado Requerido?</b></label>
+                        <div class="checkboxes" style="justify-content: space-around; margin:0px;">
+                            <div class="check1">
+                              <input type="checkbox" name="tipo" id="checkSi" value="Pregrado Requerido"><label for="checkSi">Si</label>
+                            </div>
+                            <div class="check2">
+                              <input type="checkbox" name="tipo" id="checkNo" value="Pregrado NO Requerido"><label for="checkNo">No</label>
+                            </div>
+                          </div>
+                </div>
                 <div class="input-box">
                     <span class="icon"><i class='bx bxs-user-detail'></i></span>
                     <label for=""><b>Cargo</b>
@@ -94,41 +106,54 @@
                 </div>
                 <div class="input-box">
                     <span class="icon"><i class='bx bxs-user-detail'></i></span>
-                    <label for=""><b>¿Pregrado Requerido?</b>
-                        <div class="checkboxes">
-                            <div class="check1">
-                              <input type="checkbox" name="tipo" id="checkSi" value="Pregrado Requerido"><label
-                                for="checkSi">Si</label>
-                            </div>
-                            <div class="check2">
-                              <input type="checkbox" name="tipo" id="checkNo" value="Pregrado NO Requerido"><label
-                                for="checkNo">No</label>
-                            </div>
-                          </div>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><i class='bx bxs-user-detail'></i></span>
                     <label for=""><b>Fecha Inicio</b>
                       <div class="lo-demás"><b></b></div>
                     </label><input type="date" name="fechaInicio">
-                  </div>
-                  <div class="input-box">
+                </div>
+                <div class="input-box">
                     <span class="icon"><i class='bx bxs-user-detail'></i></span>
                     <label for=""><b>Fecha Cierre</b>
                       <div class="lo-demás"><b></b></div>
                     </label><input type="date" name="fechaCierre">
-                  </div>
-                  <div class="input-box">
-                    <span class="icon"><i class='bx bxs-user-detail'></i></span>
-                    <label for=""><b>Salario Mensual</b>
-                      <div class="lo-demás"><b></b></div>
-                    </label><input type="text" name="salarioMensual">
-                  </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="con_message" placeholder="Message"></textarea>
-                  </div>
                 </div>
+                <div class="input-box-select4">
+                    <span class="icon"><i class='bx bxs-credit-card' ></i></span>
+                    <label for=""><b>Salario Mensual</b></label>
+                    <div class="select4" id="select4">
+                      <div class="contenido-select4">
+                        <p>Selecciona</p>
+                      </div>
+                      <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="opciones4" id="opciones4">
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$0 - $2.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$2.000.000 - $4.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$4.000.000 - $6.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$6.000.000 - $8.000.000</p>
+                        </div>
+                      </a>
+                      <a href="#" class="opcion4">
+                        <div class="contenido-opcion4">
+                          <p class="opcionSalario">$8.000.000 - $10.000.000</p>
+                        </div>
+                      </a>
+                    </div>
+                    <input type="hidden" name="salario" id="inputSelect4" value="">
+                  </div>
                 <button class="btn">Agregar</button>
               </div>
             </form>
@@ -139,6 +164,10 @@
               <iframe src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2019/04/Lugares-hist%C3%B3ricos-de-Bogot%C3%A1.png"></iframe>
             </div>
           </div>
+        </div>
+        </div>
+    </div>
+</section>
 
 <!--=======================Javascript============================-->
 
