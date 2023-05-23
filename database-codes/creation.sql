@@ -80,7 +80,7 @@ CREATE TABLE Desempleado (
 	nombreDesempleado VARCHAR,
 	profesion VARCHAR(50),
 	telefonoDesempleado BIGINT,
-	salario INT,
+	salario VARCHAR(50),
 	puntuacionDesempleado INT,
 	idUbicacion INT,
 	idHojaVida INT,
@@ -111,7 +111,11 @@ CREATE TABLE Agencia (
 -- buscar como insertar joins, ubicacion, cv y video
 INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado)
 VALUES
-('admin@gmail.com', 'admin_12345', 'ADMIN', 'Administrador', 1234567);
+('user@gmail.com', 'user_12345', 'USER', 'Usuario', 1234567);
+
+INSERT INTO Agencia (usuarioAdmin ,contrasenaAdmin)
+VALUES
+('admin@admin.com', 'admin_12345');
 
 -- INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado)
 -- VALUES

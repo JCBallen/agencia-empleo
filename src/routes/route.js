@@ -7,7 +7,9 @@ import {
     toHomeEmpresa,
     toEmpresa,
     toProcesos,
-    registrarDB
+    registrarDB,
+    iniciarSesion,
+    cerrarSesion
 } from "../controllers/controller.js";
 
 
@@ -33,6 +35,10 @@ router.get('/procesos', toProcesos)
 // ! Procesos con la base de datos
 
 router.post('/registro', registrarDB)
+
+router.post('/login', iniciarSesion) // no existe realmente login en las vistas, este es el primero full api
+
+router.get('/logout', cerrarSesion)
 
 
 export default router

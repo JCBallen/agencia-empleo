@@ -1,3 +1,4 @@
+import e from 'connect-flash'
 import { pool } from '../db.js'
 
 
@@ -20,8 +21,6 @@ export const toProcesos = (req, res) => res.render('procesos')
 
 
 export const registrarDB = async (req, res) => {
-    console.log(req.body)
-    req.flash('user', req.body)
 
     const {
         tipo,
@@ -48,7 +47,10 @@ export const registrarDB = async (req, res) => {
     } = req.body
 
     if (tipo === 'desempleado') {
-        const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random()*5), null, null, null])
+        // console.log(req.body.nombre, ', desempleado')
+        // req.flash('user', req.body.nombre)
+
+        const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random() * 5), null, null, null])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccion, pais])
 
@@ -65,17 +67,53 @@ export const registrarDB = async (req, res) => {
     }
 
     if (tipo === 'empresa') {
-        const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random()*5), null, null])
+        // console.log(req.body.nombreE, ', empresa')
+        // req.flash('user', req.body.nombreE)
+
+        const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random() * 5), null, null])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccionE, paisE])
 
         const actualizacion1 = await pool.query('UPDATE Empresa SET idUbicacion = $1 WHERE nit = $2 RETURNING *', [insercion2.rows[0].idubicacion, insercion1.rows[0].nit])
 
-        const insercion3 = await pool.query('INSERT INTO Sede (nombreSede, idUbicacion) VALUES ($1, $2) RETURNING *', [sedeE,insercion2.rows[0].idubicacion])
+        const insercion3 = await pool.query('INSERT INTO Sede (nombreSede, idUbicacion) VALUES ($1, $2) RETURNING *', [sedeE, insercion2.rows[0].idubicacion])
 
         const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
     }
 
-    // res.redirect('/') //! temporal, no olvidar quitarlo
-    res.send('ok')
+    res.redirect('/') //! temporal, no olvidar quitarlo
+    // res.send('ok')
+}
+
+
+export const iniciarSesion = async (req, res) => {
+    const { correo, contrasena } = req.body
+
+    const peticionDesempleado = await pool.query('SELECT * FROM Desempleado WHERE usuariodesempleado = $1 AND contrasenadesempleado = $2', [correo, contrasena])
+
+    const peticionEmpresa = await pool.query('SELECT * FROM Empresa WHERE usuarioEmpresa = $1 AND contrasenaEmpresa = $2', [correo, contrasena])
+
+    const peticionAgencia = await pool.query('SELECT * FROM Agencia WHERE usuarioAdmin = $1 AND contrasenaAdmin = $2', [correo, contrasena])
+
+    if (peticionDesempleado.rows[0]) {
+        req.flash('user', req.body.nombre)
+        res.redirect('/homeDesempleado')
+    } else if (peticionEmpresa.rows[0]) {
+        req.flash('user', req.body.nombreE)
+        res.redirect('/homeEmpresa')
+    } else if (peticionAgencia.rows[0]) {
+        req.flash('user', req.body)
+        res.redirect('/homeAgencia')
+    } else {
+        res.redirect('/')
+    }
+
+    // no dejar esto activo, ya que no se puede redireccionar y enviar una respuesta al mismo tiempo
+    // res.send('ok')  // solo testeo de la api
+}
+
+
+export const cerrarSesion = (req, res) => {
+    req.flash('user', '')
+    res.redirect('/')
 }
