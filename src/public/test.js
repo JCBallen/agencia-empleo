@@ -1,17 +1,17 @@
 import url from "./url.js";
 
-let result;
+// let result;
 
 async function traerVacantes() {
     const response = await fetch(`${url}/consultarVacantes`, { method: "GET" });
     result = await response.json();
-    return result
+    // return result
 }
 
-const res = traerVacantes()
+// const res = traerVacantes()
 
-setTimeout(() => {
+// setTimeout(() => {
+//     aqui va toda la logica
+//     console.log(res);
 
-    console.log(res);
-
-}, 1000);
+// }, 1000);
