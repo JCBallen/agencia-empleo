@@ -366,7 +366,7 @@ footer {
   display: flex;
 }
 
-.form-box-login .input-box, .form-box-signin .input-box, .input-box-select, .input-box-select1, .input-box-select2,  .input-box-select3,  .input-box-select4,  .input-box-select5{
+.form-box-login .input-box, .form-box-signin .input-box, .form-box-signin .input-box-select, .form-box-signin .input-box-select1, .form-box-signin .input-box-select2,  .form-box-signin .input-box-select3,  .form-box-signin .input-box-select4, .form-box-signin .input-box-select5, .form-box-signin .input-box-select2{
   height: 60px;
   border-bottom: 2px solid #000000;
   margin: 30px 0;
@@ -384,7 +384,7 @@ footer {
 
 .input-box-select, .input-box-select1, .input-box-select2, .input-box-select3, .input-box-select4, .input-box-select5{
   position: relative;
-  margin: 0 60px;
+  margin: 30px 0px;
 }
 
 .select, .select1, .select2, .select3, .select4, .select5{
@@ -437,6 +437,7 @@ footer {
   color: #000000;
 }
 
+
 .remember-password{
   text-align: center;
   margin-bottom: 30px;
@@ -466,6 +467,9 @@ footer {
   margin:0px 9px;
 }
 
+.dropdown{
+  border: 0;
+}
 
 @media (max-width: 1250px){
   /*Inicio Sesion*/
@@ -482,7 +486,14 @@ footer {
     padding: 80px 40px;
    }
 }
-
+@media (max-width: 990px){
+  .widget-categories{
+    flex-direction: column;
+  }
+  .buttons, .buttons1, .buttons2, .buttons3{
+    align-items: center;
+  }
+}
 @media (max-width: 925px){
 
     /*Navbar*/
@@ -1536,11 +1547,17 @@ table p {
 -----------------------------------------------------------------------
 */
 
+.widget-categories{
+  display: flex;
+  justify-content: space-around;
+}
+
 .widget-categories button{
-  margin: 15px 30px 0px 30px;
-  font-size: 18px;
+  margin: 12px 3px 0px 3px;
+  font-size: 15px;
+  font-weight: bold;
   border: 2px solid #ff9600;
-  padding: 4px 39px;
+  padding: 0px 12px;
   border-radius: 6px;
   background-color: transparent;
   color: #ff9600;
@@ -1552,6 +1569,18 @@ table p {
   color: #ffffff;
 }
 
+.icon-filtro-1, .icon-filtro-2, .icon-filtro-3, .icon-filtro-4{
+  cursor: pointer;
+}
+
+.buttons, .buttons1, .buttons2, .buttons3{
+  display: flex;
+  flex-direction: column;
+}
+.buttons.active, .buttons1.active, .buttons2.active, .buttons3.active{
+  display: flex;
+  flex-direction: column;
+}
 
 .section-title .title {
   font-size: 30px;
@@ -2354,6 +2383,7 @@ table p {
     padding: 30px 28px 29px;
   }
 }
+
 .recent-job-item .company-info {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -3691,8 +3721,8 @@ table p {
 }
 
 .team-item {
-  background-color: #f4f7f7;
-  border: 1px solid #f4f7f7;
+  background-color: #d6dadd;;
+  border: 1px solid #d6dadd;;
   border-radius: 5px;
   margin-bottom: 30px;
   padding: 44px 45px 44px;
@@ -3744,6 +3774,15 @@ table p {
           justify-content: center;
   margin-bottom: 9px;
 }
+.rating-box{
+  display: flex;
+  height: 12px;
+  color: #ffbb00;
+}
+
+.address{
+  margin-bottom: 9px;
+}
 .team-item .content .desc {
   font-size: 15px;
   line-height: 1.87;
@@ -3763,7 +3802,7 @@ table p {
   opacity: 0;
 }
 .team-item:hover {
-  background-color: #fff;
+  background-color: #ffbb001d;
   border-color: #eee;
 }
 .team-item:hover .bookmark-icon {

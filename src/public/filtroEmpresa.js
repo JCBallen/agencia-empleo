@@ -1,9 +1,4 @@
-const select = document.querySelector('#select');
-const opciones = document.querySelector('#opciones');
-const contenidoSelect = document.querySelector('#select .contenido-select');
-const hiddenInput = document.querySelector('#inputSelect');
-
-const select1 = document.querySelector('#select1');
+/*const select1 = document.querySelector('#select1');
 const opciones1 = document.querySelector('#opciones1');
 const contenidoSelect1 = document.querySelector('#select1 .contenido-select1');
 const hiddenInput1 = document.querySelector('#inputSelect1');
@@ -12,11 +7,6 @@ const select2 = document.querySelector('#select2');
 const opciones2 = document.querySelector('#opciones2');
 const contenidoSelect2 = document.querySelector('#select2 .contenido-select2');
 const hiddenInput2 = document.querySelector('#inputSelect2');
-
-const select3 = document.querySelector('#select3');
-const opciones3 = document.querySelector('#opciones3');
-const contenidoSelect3 = document.querySelector('#select3 .contenido-select3');
-const hiddenInput3 = document.querySelector('#inputSelect3');
 
 const select4 = document.querySelector('#select4');
 const opciones4 = document.querySelector('#opciones4');
@@ -60,22 +50,6 @@ document.querySelectorAll('#opciones1 > .opcion1').forEach((opcion) => {
     opciones2.classList.toggle('active');
   });
   
-  // Escoger Sede
-  document.querySelectorAll('#opciones3 > .opcion3').forEach((opcion) => {
-    opcion.addEventListener('click', (e) => {
-        e.preventDefault();
-        contenidoSelect3.innerHTML = e.currentTarget.innerHTML;
-        select3.classList.toggle('active');
-        opciones3.classList.toggle('active');
-        hiddenInput3.value = e.currentTarget.querySelector('.opcionProfesion').innerText;
-    });
-  });
-  
-  select3.addEventListener('click', () => {
-    select3.classList.toggle('active');
-    opciones3.classList.toggle('active');
-  });
-  
   // Escoger Salario
   document.querySelectorAll('#opciones4 > .opcion4').forEach((opcion) => {
     opcion.addEventListener('click', (e) => {
@@ -106,11 +80,14 @@ document.querySelectorAll('#opciones1 > .opcion1').forEach((opcion) => {
   select5.addEventListener('click', () => {
     select5.classList.toggle('active');
     opciones5.classList.toggle('active');
-  });
+  });*/
 
-let candidatos = {
-    data: [
-        nombre="Marin Kitagawa",
-        profesion="Web Designer"
-    ],
-};
+  $(document).ready(function(){
+    $('.button-value').click(function(){
+        var categoria = $(this).data('category');
+
+        if (categoria === 'ingenieria'){
+            $('.')
+        }
+    })
+})
