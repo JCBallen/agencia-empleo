@@ -4,8 +4,8 @@ import url from "./url.js";
 
 async function traerVacantes() {
     const response = await fetch(`${url}/consultarVacantes`, { method: "GET" });
-    result = await response.json();
-    // return result
+    const result = await response.json();
+    console.log(result);
 }
 
 traerVacantes();
