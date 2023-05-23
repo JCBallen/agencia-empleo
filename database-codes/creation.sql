@@ -63,7 +63,7 @@ CREATE TABLE Vacante (
 	fechaInicio DATE,
 	fechaCierre DATE,
 	cargo VARCHAR(50),
-	salario INT,
+	salario VARCHAR(50),
 	pregradoRequerido BOOLEAN,
 	rangoEdad VARCHAR(50),
 	puntuacionVacante INT,
