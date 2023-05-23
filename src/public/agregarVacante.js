@@ -1,4 +1,4 @@
-const checkboxesVacante = document.querySelectorAll('input[name="pregrado"]');
+const checkboxesVacante = document.querySelectorAll('input[name="tipo"]');
 const checkboxVacante1 = document.getElementById('checkSi');
 const checkboxVacante2 = document.getElementById('checkNo');
 
