@@ -972,6 +972,10 @@ table p {
   margin-top: 0;
 }
 
+.row > * {
+  margin-top: 0;
+}
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
