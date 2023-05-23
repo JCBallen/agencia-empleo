@@ -7179,6 +7179,7 @@ table p {
   Contact CSS
 -----------------------------------------------------------------------
 */
+
 .contact-page-area .container {
   padding-top: 120px;
   padding-bottom: 111px;
@@ -7233,7 +7234,6 @@ table p {
 }
 @media only screen and (max-width: 991px) {
   .contact-info-wrap .info-item {
-    width: 50%;
     margin-top: 30px;
   }
 }
@@ -7279,11 +7279,11 @@ table p {
   }
 }
 .contact-info-wrap .info-item .info p {
-  font-size: 17px;
+  font-size: 21px;
 }
 @media only screen and (max-width: 1199px) {
   .contact-info-wrap .info-item .info p {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 .contact-info-wrap .info-item .info p a {
@@ -7339,11 +7339,11 @@ table p {
 }
 
 .map-area {
-  margin-left: 39px;
+  margin-right: 39px;
 }
 @media only screen and (max-width: 1199px) {
   .map-area {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 .map-area img {
@@ -7352,8 +7352,22 @@ table p {
   border-radius: 5px;
 }
 @media only screen and (max-width: 1199px) {
+  .vacante-form{
+    margin-left: 39px;
+  }
   .map-area img {
-    height: 480px;
+    height: 612px;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .col-lg-6{
+    flex-direction: column;
+  }
+  .map-area img {
+    height: 228px;
+    margin-bottom: 30px;
   }
 }
 
