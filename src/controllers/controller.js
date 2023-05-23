@@ -46,6 +46,8 @@ export const registrarDB = async (req, res) => {
         contrasenaE
     } = req.body
 
+    res.redirect('/')
+
     if (tipo === 'desempleado') {
 
         const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random() * 5), null, null, null])
@@ -77,7 +79,7 @@ export const registrarDB = async (req, res) => {
         const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
     }
 
-    res.redirect('/')
+
     //! temporal, no olvidar quitarlo
     // res.send('ok')
 }
@@ -119,9 +121,10 @@ export const cerrarSesion = (req, res) => {
 export const agregarVacante = async (req, res) => {
     const { tipo, cargo, fechaInicio, fechaCierre, salario } = req.body
 
+    res.redirect('/homeEmpresa')
+
     const insercionVacante = await pool.query('INSERT INTO Vacante (fechaInicio, fechaCierre, cargo, salario, pregradoRequerido, rangoEdad, puntuacionVacante, nit, idUbicacion) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *', [fechaInicio, fechaCierre, cargo, salario, tipo === "Pregrado Requerido" ? true : false, null, null, null, null])
 
     // console.log(insercionVacante.rows[0])
-    res.redirect('/homeEmpresa')
     // res.send('ok')
 }
