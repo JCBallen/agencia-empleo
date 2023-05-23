@@ -77,6 +77,8 @@ export const registrarDB = async (req, res) => {
 
         const insercion3 = await pool.query('INSERT INTO Sede (nombreSede, idUbicacion) VALUES ($1, $2) RETURNING *', [sedeE,insercion2.rows[0].idubicacion])
 
+        console.log(insercion3.rows[0])
+
         const actualizacion2 = await pool.query('UPDATE Empresa SET idSede = $1 WHERE nit = $2 RETURNING *', [insercion3.rows[0].idsede, insercion1.rows[0].nit])
     }
 

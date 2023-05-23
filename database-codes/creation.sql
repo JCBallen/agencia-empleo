@@ -80,7 +80,7 @@ CREATE TABLE Desempleado (
 	nombreDesempleado VARCHAR,
 	profesion VARCHAR(50),
 	telefonoDesempleado BIGINT,
-	salario INT,
+	salario VARCHAR(50),
 	puntuacionDesempleado INT,
 	idUbicacion INT,
 	idHojaVida INT,
