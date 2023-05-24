@@ -11,10 +11,9 @@ async function traerVacantes() {
   // return result
 
   const dataContainer = document.getElementById("vacantes");
-  console.log(dataContainer);
 
   result.forEach(function (item) {
-    console.log(item);
+    console.log(item.cargo);
     const div1 = document.createElement("div");
     const div2 = document.createElement("div");
     const div3 = document.createElement("div");
@@ -23,6 +22,8 @@ async function traerVacantes() {
     const div6 = document.createElement("div");
     const div7 = document.createElement("div");
     const div8 = document.createElement("div");
+    const cargo = item.cargo;
+    const pregrado = item.pregradorequerido?'<h5 class="degree-yes">Pregrado Requerido</h5>':'<h5 class="degree-no">Pregrado NO Requerido</h5>';
 
     div1.classList.add("col-md-6", "col-lg-4");
     div2.classList.add("recent-job-item");
@@ -33,20 +34,24 @@ async function traerVacantes() {
     div7.classList.add("recent-job-info");
     div8.classList.add("salary");
 
+
     div4.innerHTML =
       '<a href="company-details.html"><img src="assets/img/companies/1.jpg" width="75" height="75 alt="Image-HasTech"></a>';
     div5.innerHTML =
-      '<h4 class="name"><a href="company-details.html">' +
+      '<h4 class="name"><a href="/empresa">' +
       item.nit +
       '</a></h4><p class="address"><i class="bx bxs-map"></i>' +
       item.idubicacion +
       "</p>";
+    /* div6.innerHTML =
+      ; */
+    //div6.innerHTML = ;
     div6.innerHTML =
-      '<h3 class="title"><a href="job-details.html">' +
-      item.cargo +
-      "</a></h3>";
-    //div6.innerHTML = item.pregradorequerido?'<h5 class="degree-yes">Pregrado Requerido</h5>':'<h5 class="degree-no">Pregrado NO Requerido</h5>';
-    div6.innerHTML =
+      //cargo.textContent +
+      '<h3 class="title"><a href="#">' +
+      cargo +
+      '</a></h3>' +
+      pregrado +
       '<p class="desc">Fecha Inicio:' +
       item.fechainicio +
       "<br> Fecha Cierre:" +

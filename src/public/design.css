@@ -373,7 +373,7 @@ footer {
   margin: 30px 0;
 }
 
-.vacante-form .input-box, .vacante-form .input-box-select4{
+.vacante-form .input-box, .vacante-form .input-box-select4, .vacante-form .input-box-select3, .vacante-form .input-box-select2{
   border-bottom: 2px solid #000000;
   margin: 21px 0;
 }
@@ -440,7 +440,7 @@ footer {
   background: #c8c8c8 ;
 }
 
-.opcionPais, .opcionPais1, .opcionProfesion, .opcionSede, .opcionSalario, .opcionPuntuacion, .opcionCandidato, .opcionCargo{
+.opcionPais, .opcionPais1, .opcionProfesion, .opcionSede, .opcionSalario, .opcionPuntuacion, .opcionCandidato, .opcionCargo, .opcionEdad{
   color: #000000;
 }
 
@@ -2460,6 +2460,7 @@ table p {
   }
 }
 .recent-job-item .main-content .title a {
+  cursor: none;
   color: #272a33;
   display: flex;
   font-style: normal;
@@ -2516,7 +2517,7 @@ table p {
 .recent-job-item .recent-job-info .salary h4 {
   color: gray;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1;
   margin-bottom: 0;
 }
@@ -7354,7 +7355,7 @@ table p {
 }
 .map-area img {
   width: 100%;
-  height: 579px;
+  height: 678px;
   border-radius: 5px;
 }
 @media only screen and (max-width: 1199px) {
