@@ -10,6 +10,7 @@ async function traerVacantes() {
 
   // return result
   setTimeout(() => {
+    console.log(result.cargo);
     const dataContainer = document.getElementById("procesos");
 
     result.forEach(function (item) {
