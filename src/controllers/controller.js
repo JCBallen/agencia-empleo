@@ -140,9 +140,10 @@ export const agregarVacante = async (req, res) => {
 
     const peticionEmpresa = await pool.query('SELECT nit, idubicacion FROM Empresa WHERE nombreempresa = $1', [usuario])
 
-    // const peticionUbicacion = await pool.query('SELECT direccion, pais FROM Ubicacion WHERE idubicacion = $1', [peticionEmpresa.rows[0].idubicacion])
+    const peticionUbicacion = await pool.query('SELECT direccion, pais FROM Ubicacion WHERE idubicacion = $1', [peticionEmpresa.rows[0].idubicacion])
 
-    const insercionVacante2 = await pool.query('UPDATE Vacante SET nit = $1, idUbicacion = $2 WHERE idvacante = $3 RETURNING *', [peticionEmpresa.rows[0].nit, peticionEmpresa.rows[0].idubicacion, insercionVacante.rows[0].idvacante])
+    const insercionVacante2 = await pool.query('UPDATE Vacante SET nit = $1, idUbicacion = $2, nombreempresa = $3, direccion = $4, pais = $5 WHERE idvacante = $6 RETURNING *', [peticionEmpresa.rows[0].nit, peticionEmpresa.rows[0].idubicacion, usuario,peticionUbicacion.rows[0].direccion,peticionUbicacion.rows[0].pais, insercionVacante.rows[0].idvacante])
+    // console.log(usuario, peticionUbicacion.rows[0].direccion, peticionUbicacion.rows[0].pais)
 
     // console.log(insercionVacante2.rows[0])
     // res.json(insercionVacante2.rows) // just dev
@@ -153,18 +154,7 @@ export const consultarVacantes = async (req, res) => {
     const peticionVacantes = await pool.query('SELECT * FROM Vacante')
     const usuario = req.session.user
 
-    const completo = { ...peticionVacantes.rows }
-
-    // peticionVacantes.rows.forEach((vacante) => {
-    //     console.log(vacante)
-    // })
-
-    // const peticionEmpresa = await pool.query('SELECT nombreempresa FROM Empresa WHERE nombreempresa = $1', [vacante.nit])
-
-    // const peticionUbicacion = await pool.query('SELECT direccion, pais FROM Ubicacion WHERE idubicacion = $1', [peticionEmpresa.rows[0].idubicacion])
-
-    console.log(completo)
-    res.json('holiwis')
+    res.json(peticionVacantes.rows)
 }
 
 export const obtenerUsuario = (req, res) => {
