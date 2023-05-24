@@ -7,7 +7,8 @@ const headers = async () => {
             method: "GET",
         }
     );
-    const result = await response.json();
+    let result = await response.json();
+    result = result.usuario;
 
     // console.log(result)
     document.getElementById('username').innerText = result;

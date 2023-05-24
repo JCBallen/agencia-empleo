@@ -8,7 +8,8 @@ async function traerVacantes() {
   const responseU = await fetch("http://localhost:3000/obtenerUsuario", {
     method: "GET",
   });
-  const resultU = await responseU.json();
+  let resultU = await responseU.json();
+  resultU = resultU.usuario;
 
   const responseV = await fetch("http://localhost:3000/consultarVacantes", {
     method: "GET",
@@ -19,7 +20,7 @@ async function traerVacantes() {
   setTimeout(() => {
     const matchEmpresa = resultE.filter((e) => e.nombreempresa === resultU)[0]; // una vez
 
-    const matchesVacantes = resultV.filter((v) => v.nombreempresa === resultU)[0]; // con foreach
+    const matchesVacantes = resultV.filter((v) => v.nombreempresa === resultU); // con foreach
 
     const dataContainer = document.getElementById("empresa");
     // console.log(matchEmpresa[0].sede)
@@ -39,9 +40,9 @@ async function traerVacantes() {
     div5.classList.add("counter-item");
     div6.classList.add("counter-item");
     div7.classList.add("counter-item");
-    div4.style.marginLeft='120px';
-    dataContainer.style.justifyContent="center";
-    
+    div4.style.marginLeft = '120px';
+    dataContainer.style.justifyContent = "center";
+
     numeroRandom1 = Math.ceil(Math.random() * 100);
     numeroRandom2 = Math.ceil(Math.random() * 50);
     numeroRandom3 = Math.ceil(Math.random() * 500);
@@ -50,14 +51,14 @@ async function traerVacantes() {
       '<img src="assets/img/companies/11.jpg" width="130" height="130" alt="Image-HasTech">';
     div3.innerHTML =
       '<h3 class="title" style="text-align:left;">' +
-      matchEmpresa[0].nombreempresa +
+      matchEmpresa.nombreempresa +
       "</h3>" +
       '<ul class="info-list">' +
       '<li><i class="bx bxs-map"></i>' +
-      matchEmpresa[0].pais +
+      matchEmpresa.pais +
       "</li>" +
       '<li><i class="bx bxs-buildings"></i>' +
-      matchEmpresa[0].sede +
+      matchEmpresa.sede +
       "</li>" +
       "</ul>" +
       '<button type="button" class="btn-theme btn-white">Seguir</button>' +
@@ -85,7 +86,7 @@ async function traerVacantes() {
     div4.appendChild(div6);
     div4.appendChild(div7);
 
-    dataContainer.appendChild(div1); 
+    dataContainer.appendChild(div1);
 
     /* result.forEach(function (item) {
       console.log(item.cargo);
