@@ -72,7 +72,7 @@ async function traerVacantes() {
         a.innerHTML=
         "<div class='contenido-opcion2'><p class='opcionCandidato'><b>"+
         item.nombredesempleado +
-        "</b>"+
+        "</b>   "+
         item.profesion+
         "</p></div>";
 
