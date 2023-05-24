@@ -45,15 +45,15 @@ async function traerVacantes() {
           }
 
       div4.innerHTML = 
-      "h3 class='title'><a href='#'>"+
+      "<h3 class='title'><a href='#'>"+
       item.cargo+
       "</a></h3>"+
       estadoAleatorio+
-      "<p class='desc'><b>Empresa:</b>"+
+      "<p class='desc'><b>Empresa:   </b>"+
       item.nombreempresa+
-      "<br><b>Aspirante:</b>"+
+      "<br><b>Aspirante:   </b>"+
       item.nombredesempleado+
-      "<br><b>Fecha:</b>"+
+      "<br><b>Fecha:   </b>"+
       item.fecharealizacion+
       "</p>";
 

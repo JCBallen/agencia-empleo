@@ -3817,7 +3817,7 @@ table p {
 .team-item .bookmark-icon-hover {
   opacity: 0;
 }
-.team-item:hover {
+.team-item:hover, .post-item .recent-job-item:hover {
   background-color: #ffbb001d;
   border-color: #eee;
 }
