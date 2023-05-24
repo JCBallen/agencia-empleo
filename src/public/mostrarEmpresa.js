@@ -6,8 +6,8 @@ async function traerVacantes() {
 
   // return result
   setTimeout(() => {
-    console.log(result.sede)
-    /* const dataContainer = document.getElementById("empresa");
+    console.log(result[0].sede)
+    const dataContainer = document.getElementById("empresa");
 
     const div1 = document.createElement("div");
     const div2 = document.createElement("div");
@@ -25,6 +25,9 @@ async function traerVacantes() {
     div6.classList.add("counter-item");
     div7.classList.add("counter-item");
 
+    div4.style.marginLeft='120px';
+    dataContainer.style.justifyContent="center";
+    
     numeroRandom1 = Math.ceil(Math.random() * 100);
     numeroRandom2 = Math.ceil(Math.random() * 50);
     numeroRandom3 = Math.ceil(Math.random() * 500);
@@ -32,15 +35,15 @@ async function traerVacantes() {
     div2.innerHTML =
       '<img src="assets/img/companies/11.jpg" width="130" height="130" alt="Image-HasTech">';
     div3.innerHTML =
-      '<h3 class="title">' +
-      result.nombreempresa +
+      '<h3 class="title" style="text-align:left;">' +
+      result[0].nombreempresa +
       "</h3>" +
       '<ul class="info-list">' +
       '<li><i class="bx bxs-map"></i>' +
-      result.pais +
+      result[0].pais +
       "</li>" +
       '<li><i class="bx bxs-buildings"></i>' +
-      result.sede +
+      result[0].sede +
       "</li>" +
       "</ul>" +
       '<button type="button" class="btn-theme btn-white">Seguir</button>' +
@@ -70,9 +73,9 @@ async function traerVacantes() {
 
     dataContainer.appendChild(div1); 
 
-    result.forEach(function (item) {
+    /* result.forEach(function (item) {
       console.log(item.cargo);
-    });*/
+    }); */
   }, 1000);
 }
 
