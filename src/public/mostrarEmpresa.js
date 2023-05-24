@@ -21,9 +21,8 @@ async function traerVacantes() {
 
     const matchesVacantes = resultV.filter((v) => v.nombreempresa === resultU)[0]; // con foreach
 
-    /* const dataContainer = document.getElementById("empresa");
-    console.log(result[0].sede)
     const dataContainer = document.getElementById("empresa");
+    // console.log(matchEmpresa[0].sede)
 
     const div1 = document.createElement("div");
     const div2 = document.createElement("div");
@@ -51,14 +50,14 @@ async function traerVacantes() {
       '<img src="assets/img/companies/11.jpg" width="130" height="130" alt="Image-HasTech">';
     div3.innerHTML =
       '<h3 class="title" style="text-align:left;">' +
-      result[0].nombreempresa +
+      matchEmpresa[0].nombreempresa +
       "</h3>" +
       '<ul class="info-list">' +
       '<li><i class="bx bxs-map"></i>' +
-      result[0].pais +
+      matchEmpresa[0].pais +
       "</li>" +
       '<li><i class="bx bxs-buildings"></i>' +
-      result[0].sede +
+      matchEmpresa[0].sede +
       "</li>" +
       "</ul>" +
       '<button type="button" class="btn-theme btn-white">Seguir</button>' +
