@@ -13,6 +13,7 @@ async function traerVacantes() {
   setTimeout(() => {
     const dataContainer1 = document.getElementById("desempleados");
     const dataContainer = document.getElementById("vacantes");
+    const opcionesDesempleados = document.getElementById("opciones2")
     
     resultD.forEach(function (item) {
       const div1 = document.createElement("div");
@@ -20,6 +21,8 @@ async function traerVacantes() {
       const div3 = document.createElement("div");
       const div4 = document.createElement("div");
       const div5 = document.createElement("div");
+
+      const a = document.createElement("a");
 
       const numeroPuntuacion = item.puntuaciondesempleado;
 
@@ -42,6 +45,8 @@ async function traerVacantes() {
       div4.classList.add("content");
       div5.classList.add("rating-box");
 
+      a.classList.add("opcion2");
+
       div3.innerHTML =
         '<a href="#"><img src="https://i.ibb.co/R4SD5Zv/Perfil.jpg" width="160" height="160" alt="Image-HasTech"></a>';
       div4.innerHTML =
@@ -63,12 +68,20 @@ async function traerVacantes() {
         '<a class="btn-theme btn-white btn-sm" href="' +
         item.linkvideo +
         '" target="_blank">Video Presentación</a>';
+    
+        a.innerHTML=
+        "<div class='contenido-opcion2'><p class='opcionCandidato'><b>"+
+        item.nombredesempleado +
+        "</b>"+
+        item.profesion+
+        "</p></div>";
 
       div1.appendChild(div2);
       div2.appendChild(div3);
       div2.appendChild(div4);
 
       dataContainer1.appendChild(div1);
+      opcionesDesempleados.appendChild(a);
     });
     resultV.forEach(function (item) {
         console.log(item.cargo);
