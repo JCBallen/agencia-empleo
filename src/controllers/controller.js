@@ -68,7 +68,7 @@ export const registrarDB = async (req, res) => {
 
     if (tipo === 'empresa') {
 
-        const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede, direccion, pais, sede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random() * 5), null, null,direccionE, paisE, sedeE])
+        const insercion1 = await pool.query('INSERT INTO Empresa (nit, usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede, direccion, pais, sede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random() * 5), null, null,direccionE, paisE, sedeE])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccionE, paisE])
 
@@ -165,6 +165,10 @@ export const obtenerUsuario = (req, res) => {
 
 export const consultarDesempleados = async (req, res) => {
     const peticionDesempleados = await pool.query('SELECT * FROM Desempleado')
-
     res.json(peticionDesempleados.rows)
+}
+
+export const consultarEmpresas = async (req, res) => {
+    const peticionEmpresas = await pool.query('SELECT * FROM Empresa')
+    res.json(peticionEmpresas.rows)
 }

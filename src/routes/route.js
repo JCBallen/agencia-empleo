@@ -14,7 +14,8 @@ import {
     agregarVacante,
     consultarVacantes,
     obtenerUsuario,
-    consultarDesempleados
+    consultarDesempleados,
+    consultarEmpresas
 } from "../controllers/controller.js";
 
 
@@ -54,6 +55,8 @@ router.get('/consultarVacantes', consultarVacantes)
 router.get('/obtenerUsuario', obtenerUsuario)
 
 router.get('/consultarDesempleados', consultarDesempleados)
+
+router.get('/consultarEmpresas', consultarEmpresas)
 
 
 export default router
