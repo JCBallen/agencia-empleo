@@ -201,7 +201,7 @@ async function traerVacantes() {
         "</a></h3>" +
         pregradoVacante +
         '<p class="desc"><b>Fecha Inicio:</b>' +
-        item.fechainicio +
+        new Date(item.fechainicio).toLocaleDateString("es-ES", { day: "2-digit", month: "2-digit", year: "numeric" }) +
         "<br> <b>Fecha Cierre:</b>" +
         item.fechacierre +
         "<br> <b>Rando Edad:</b>" +
