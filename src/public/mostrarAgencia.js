@@ -93,7 +93,6 @@ async function traerVacantes() {
     );
     const hiddenInputCandidato = document.querySelector("#inputSelect2");
 
-    
     const hiddenInputCargo = document.querySelector("#inputSelect4");
 
     // Mostrar Candidatos
@@ -187,7 +186,7 @@ async function traerVacantes() {
       dataContainer.appendChild(div1);
       opcionesVacantes.appendChild(a);
     });
-    
+
     const selectCargo = document.querySelector("#select4");
     const opcionesCargo = document.querySelector("#opciones4");
     const contenidoSelectCargo = document.querySelector(
@@ -196,22 +195,58 @@ async function traerVacantes() {
 
     // Mostrar Cargos
     document.querySelectorAll("#opciones4 > .opcion4").forEach((opcion) => {
-        opcion.addEventListener("click", (e) => {
-          e.preventDefault();
-          contenidoSelectCargo.innerHTML = e.currentTarget.innerHTML;
-          selectCargo.classList.toggle("active");
-          opcionesCargo.classList.toggle("active");
-          hiddenInputCargo.value =
-            e.currentTarget.querySelector(".opcionSalario").innerText;
-        });
-      });
-  
-      selectCargo.addEventListener("click", () => {
+      opcion.addEventListener("click", (e) => {
+        e.preventDefault();
+        contenidoSelectCargo.innerHTML = e.currentTarget.innerHTML;
         selectCargo.classList.toggle("active");
         opcionesCargo.classList.toggle("active");
+        hiddenInputCargo.value =
+          e.currentTarget.querySelector(".opcionSalario").innerText;
       });
+    });
 
+    selectCargo.addEventListener("click", () => {
+      selectCargo.classList.toggle("active");
+      opcionesCargo.classList.toggle("active");
+    });
 
+    const boton = document.getElementById("btn");
+
+    boton.addEventListener("click", enviarDatos);
+
+    function enviarDatos() {
+      const formulario = document.getElementById("formularioVinculacion");
+      const cargo = resultV.cargo;
+      const empresa = resultV.nombreempresa;
+      const aspirante = resultD.nombredesempleado;
+      const fecha = "Mayo 24, 2023.";
+
+      // Obtén los valores de los campos de entrada que deseas enviar
+
+      // Crea un objeto con los datos a enviar
+      const datos = {
+        cargo: cargo,
+        nombreempresa: empresa,
+        nombredesempleado: aspirante,
+        fecharealizacion: fecha,
+        // Agrega aquí los demás campos y sus valores
+      };
+
+      // Envía los datos a una URL de destino utilizando una solicitud AJAX
+      fetch("vinculacion", {
+        method: "POST",
+        body: JSON.stringify(datos),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          // Maneja la respuesta de la solicitud
+        })
+        .catch((error) => {
+          // Maneja los errores de la solicitud
+        });
+    }
   }, 1000);
 }
 
