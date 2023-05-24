@@ -16,7 +16,9 @@ import {
     obtenerUsuario,
     consultarDesempleados,
     consultarEmpresas,
-    redireccionHome
+    redireccionHome,
+    vinculacion,
+    consultarProcesos
 } from "../controllers/controller.js";
 
 
@@ -60,5 +62,9 @@ router.get('/consultarDesempleados', consultarDesempleados)
 router.get('/consultarEmpresas', consultarEmpresas)
 
 router.get('/redireccionHome', redireccionHome)
+
+router.post('/vinculacion', vinculacion)
+
+router.get('/consultarProcesos', consultarProcesos)
 
 export default router
