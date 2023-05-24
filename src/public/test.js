@@ -4,7 +4,7 @@
 
 async function traerVacantes() {
   const response = await fetch(
-    "https://agencia-empleo.azurewebsites.net/consultarVacantes",
+    "http://localhost:3000/consultarVacantes",
     {
       method: "GET",
     }
@@ -45,7 +45,7 @@ async function traerVacantes() {
         '<h4 class="name"><a href="/empresa">' +
         item.nombreempresa +
         '</a></h4><p class="address"><i class="bx bxs-map"></i>' +
-        item.idubicacion +
+        item.pais +
         "</p>";
       /* div6.innerHTML =
       ; */
@@ -78,7 +78,7 @@ async function traerVacantes() {
 
       dataContainer.appendChild(div1);
     });
-  }, 4000);
+  }, 1000);
 }
 
 traerVacantes();
