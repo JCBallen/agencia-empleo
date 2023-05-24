@@ -1,12 +1,26 @@
+
 async function traerVacantes() {
-  const response = await fetch("http://localhost:3000/consultarEmpresas", {
+  const responseE = await fetch("http://localhost:3000/consultarEmpresas", {
     method: "GET",
   });
-  const result = await response.json();
+  const resultE = await responseE.json();
+
+  const responseU = await fetch("http://localhost:3000/obtenerUsuario", {
+    method: "GET",
+  });
+  const resultU = await responseU.json();
+
+  const responseV = await fetch("http://localhost:3000/consultarVacantes", {
+    method: "GET",
+  });
+  const resultV = await responseV.json();
 
   // return result
   setTimeout(() => {
-    console.log(result.sede)
+    const matchEmpresa = resultE.filter((e) => e.nombreempresa === resultU)[0]; // una vez
+
+    const matchesVacantes = resultV.filter((v) => v.nombreempresa === resultU)[0]; // con foreach
+
     /* const dataContainer = document.getElementById("empresa");
 
     const div1 = document.createElement("div");

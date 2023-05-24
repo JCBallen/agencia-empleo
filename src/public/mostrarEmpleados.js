@@ -9,7 +9,6 @@ async function traerVacantes() {
     const dataContainer = document.getElementById("desempleados");
 
     result.forEach(function (item) {
-      console.log(item.cargo);
       const div1 = document.createElement("div");
       const div2 = document.createElement("div");
       const div3 = document.createElement("div");
