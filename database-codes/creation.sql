@@ -103,13 +103,16 @@ CREATE TABLE Desempleado (
 CREATE TABLE Solicitud (
 	idSolicitud SERIAL PRIMARY KEY,
 	fechaRealizacion DATE,
-	estado BOOLEAN,
-	idVacante INT,
-	idDesempleado INT,
-	nit BIGINT,
-	FOREIGN KEY (idVacante) REFERENCES Vacante(idVacante),
-	FOREIGN KEY (idDesempleado) REFERENCES Desempleado(idDesempleado),
-	FOREIGN KEY (nit) REFERENCES Empresa(nit)
+	-- estado BOOLEAN,
+	-- idVacante INT,
+	-- idDesempleado INT,
+	-- nit BIGINT,
+	cargo VARCHAR(50),
+	nombreEmpresa VARCHAR(50),
+	nombreDesempleado VARCHAR(50),
+	-- FOREIGN KEY (idVacante) REFERENCES Vacante(idVacante),
+	-- FOREIGN KEY (idDesempleado) REFERENCES Desempleado(idDesempleado),
+	-- FOREIGN KEY (nit) REFERENCES Empresa(nit)
 );
 
 CREATE TABLE Agencia (
