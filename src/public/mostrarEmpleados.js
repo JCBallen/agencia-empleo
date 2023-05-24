@@ -25,10 +25,11 @@ async function traerVacantes() {
       const textoRepetido = texto.repeat(numeroPuntuacion);
 
       const puntuacion = div5.innerHTML =
-        '<p class="desc" style="line-height: 1; margin-right: 6px;">' +
+        '<p class="desc" style="line-height: 1; margin: 0; color:#FFBB00;"><b>' +
         numeroPuntuacion +
-        "</p>" +
-        textoRepetido;
+        "</b>   " +
+        textoRepetido+
+        "</p>";
 
       div1.classList.add("col-sm-6", "col-lg-4", "col-xl-3");
       div2.classList.add("team-item");
@@ -46,22 +47,21 @@ async function traerVacantes() {
         item.profesion +
         "</h5>" +
         puntuacion+
-        '<p class="desc"><i class="bx bxs-map"></i>' +
+        '<p class="desc"><i class="bx bxs-map" style="margin-bottom:0;"></i>     '+
         item.pais +
-        '<br><i class="bx bxs-phone"></i>' +
+        '<br><i class="bx bxs-phone"></i>     '+
         item.telefonodesempleado +
         "</p>" +
         '<a class="btn-theme btn-white btn-sm" href="' +
-        item.linkHojaVida +
-        '" style="margin-bottom: 18px;">Hoja de Vida</a>' +
+        item.linkhojavida +
+        '" target="_blank" style="margin-bottom: 18px;">Hoja de Vida</a>' +
         '<a class="btn-theme btn-white btn-sm" href="' +
-        item.linkVideo +
-        '">Video Presentación</a>';
+        item.linkvideo +
+        '" target="_blank">Video Presentación</a>';
 
       div1.appendChild(div2);
       div2.appendChild(div3);
       div2.appendChild(div4);
-      div4.appendChild(div5);
 
       dataContainer.appendChild(div1);
     });
