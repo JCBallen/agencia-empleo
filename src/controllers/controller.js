@@ -130,22 +130,35 @@ export const cerrarSesion = (req, res) => {
 
 
 export const agregarVacante = async (req, res) => {
-    const { tipo, cargo, fechaInicio, fechaCierre, salario } = req.body
+    const { tipo, cargo, edad, fechaInicio, fechaCierre, salario } = req.body
+    const usuario = req.session.user
+    console.log("usuario: " + usuario)
 
     res.redirect('/homeEmpresa')
 
-    const insercionVacante = await pool.query('INSERT INTO Vacante (fechaInicio, fechaCierre, cargo, salario, pregradoRequerido, rangoEdad, puntuacionVacante, nit, idUbicacion) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *', [fechaInicio, fechaCierre, cargo, salario, tipo === "Pregrado Requerido" ? true : false, null, null, null, null])
+    const insercionVacante = await pool.query('INSERT INTO Vacante (fechaInicio, fechaCierre, cargo, salario, pregradoRequerido, rangoEdad, puntuacionVacante, nit, idUbicacion) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *', [fechaInicio, fechaCierre, cargo, salario, tipo === "Pregrado Requerido" ? true : false, edad, null, null, null])
 
-    const usuario = req.session.user
-    console.log(usuario)
-    // console.log(insercionVacante.rows[0])
-    // res.send('ok')
+    const peticionEmpresa = await pool.query('SELECT nit, idubicacion FROM Empresa WHERE nombreempresa = $1', [usuario])
+
+    const peticionUbicacion = await pool.query('SELECT direccion, pais FROM Ubicacion WHERE idubicacion = $1', [peticionEmpresa.rows[0].idubicacion])
+
+    const insercionVacante2 = await pool.query('UPDATE Vacante SET nit = $1, idUbicacion = $2, nombreempresa = $3, direccion = $4, pais = $5 WHERE idvacante = $6 RETURNING *', [peticionEmpresa.rows[0].nit, peticionEmpresa.rows[0].idubicacion, usuario,peticionUbicacion.rows[0].direccion,peticionUbicacion.rows[0].pais, insercionVacante.rows[0].idvacante])
+    // console.log(usuario, peticionUbicacion.rows[0].direccion, peticionUbicacion.rows[0].pais)
+
+    // console.log(insercionVacante2.rows[0])
+    // res.json(insercionVacante2.rows) // just dev
 }
 
 
 export const consultarVacantes = async (req, res) => {
     const peticionVacantes = await pool.query('SELECT * FROM Vacante')
     const usuario = req.session.user
-    console.log(usuario)
+
     res.json(peticionVacantes.rows)
+}
+
+export const obtenerUsuario = (req, res) => {
+    const usuario = req.session.user
+    console.log(usuario)
+    res.json(usuario)
 }

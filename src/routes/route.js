@@ -12,7 +12,8 @@ import {
     iniciarSesion,
     cerrarSesion,
     agregarVacante,
-    consultarVacantes
+    consultarVacantes,
+    obtenerUsuario
 } from "../controllers/controller.js";
 
 
@@ -48,6 +49,8 @@ router.get('/logout', cerrarSesion)
 router.post('/agregarVacante', agregarVacante)
 
 router.get('/consultarVacantes', consultarVacantes)
+
+router.get('/obtenerUsuario', obtenerUsuario)
 
 
 export default router

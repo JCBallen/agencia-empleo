@@ -53,9 +53,9 @@ CREATE TABLE Empresa (
 	telefonoEmpresa BIGINT,
 	puntuacionEmpresa INT,
 	idUbicacion INT,
-	idSede INT,
-	FOREIGN KEY (idUbicacion) REFERENCES Ubicacion(idUbicacion),
-	FOREIGN KEY (idSede) REFERENCES Sede(idSede)
+	idSede INT
+	-- FOREIGN KEY (idUbicacion) REFERENCES Ubicacion(idUbicacion)
+	-- FOREIGN KEY (idSede) REFERENCES Sede(idSede)
 );
 
 CREATE TABLE Vacante (
@@ -69,6 +69,9 @@ CREATE TABLE Vacante (
 	puntuacionVacante INT,
 	nit INT,
 	idUbicacion INT,
+	nombreempresa VARCHAR(50),
+	direccion VARCHAR(50),
+	pais VARCHAR(50),
 	FOREIGN KEY (nit) REFERENCES Empresa(nit),
 	FOREIGN KEY (idUbicacion) REFERENCES Ubicacion(idUbicacion)
 );
@@ -112,6 +115,14 @@ CREATE TABLE Agencia (
 INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado)
 VALUES
 ('user@gmail.com', 'user_12345', 'Jorge', 'Usuario', 1234567);
+
+INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede)
+VALUES
+(1314 , 'empresa@god.com', '123456', 'Adidas', 'Adonai', 'John Beck', 6013777777, 4, 1, 1);
+
+INSERT INTO Ubicacion (direccion, pais) VALUES ('Cra 178a #15-10 - Bogota', 'Colombia');
+
+INSERT INTO Sede (nombreSede, idUbicacion) VALUES ('Norte', '1');
 
 INSERT INTO Agencia (usuarioAdmin ,contrasenaAdmin)
 VALUES
