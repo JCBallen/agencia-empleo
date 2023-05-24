@@ -13,7 +13,8 @@ import {
     cerrarSesion,
     agregarVacante,
     consultarVacantes,
-    obtenerUsuario
+    obtenerUsuario,
+    consultarDesempleados
 } from "../controllers/controller.js";
 
 
@@ -51,6 +52,8 @@ router.post('/agregarVacante', agregarVacante)
 router.get('/consultarVacantes', consultarVacantes)
 
 router.get('/obtenerUsuario', obtenerUsuario)
+
+router.get('/consultarDesempleados', consultarDesempleados)
 
 
 export default router

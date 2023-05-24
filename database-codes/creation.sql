@@ -53,7 +53,10 @@ CREATE TABLE Empresa (
 	telefonoEmpresa BIGINT,
 	puntuacionEmpresa INT,
 	idUbicacion INT,
-	idSede INT
+	idSede INT,
+	direccion VARCHAR(50),
+	pais VARCHAR(50),
+	sede VARCHAR(50)
 	-- FOREIGN KEY (idUbicacion) REFERENCES Ubicacion(idUbicacion)
 	-- FOREIGN KEY (idSede) REFERENCES Sede(idSede)
 );
@@ -88,9 +91,13 @@ CREATE TABLE Desempleado (
 	idUbicacion INT,
 	idHojaVida INT,
 	idVideo INT,
-	FOREIGN KEY (idUbicacion) REFERENCES Ubicacion(idUbicacion),
-	FOREIGN KEY (idHojaVida) REFERENCES HojaVida(idHojaVida),
-	FOREIGN KEY (idVideo) REFERENCES Video(idVideo)
+	linkHojaVida VARCHAR(200),
+	linkVideo VARCHAR(200),
+	direccion VARCHAR(50),
+	pais VARCHAR(50)
+	-- FOREIGN KEY (idUbicacion) REFERENCES Ubicacion(idUbicacion),
+	-- FOREIGN KEY (idHojaVida) REFERENCES HojaVida(idHojaVida),
+	-- FOREIGN KEY (idVideo) REFERENCES Video(idVideo)
 );
 
 CREATE TABLE Solicitud (
@@ -112,13 +119,19 @@ CREATE TABLE Agencia (
 );
 
 -- buscar como insertar joins, ubicacion, cv y video
-INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado)
+INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo, linkHojaVida, linkVideo, direccion, pais)
 VALUES
-('user@gmail.com', 'user_12345', 'Jorge', 'Usuario', 1234567);
+('user@gmail.com', 'user_12345', 'Jorge', 'Economista', 1234567, '$4.000.000 - $6.000.000', 5, 1, 1, 1, 'https://drive.google.com/file/d/11FMCZ059yXKpefCLX7IbKICiw-zddwl9/view?usp=share_link','https://youtu.be/jNbOe_UR2a0', 'Cra 38', 'Bogota, CO');
 
-INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede)
+INSERT INTO Ubicacion (direccion, pais) VALUES  ('Cra 38' , 'Bogota, CO');
+
+INSERT INTO HojaVida (link) VALUES ('https://drive.google.com/file/d/11FMCZ059yXKpefCLX7IbKICiw-zddwl9/view?usp=share_link');
+
+INSERT INTO Video (link) VALUES ('https://youtu.be/jNbOe_UR2a0');
+
+INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede, direccion, pais, sede)
 VALUES
-(1314 , 'empresa@god.com', '123456', 'Adidas', 'Adonai', 'John Beck', 6013777777, 4, 1, 1);
+(1314 , 'empresa@god.com', '123456', 'Adidas', 'Adonai', 'John Beck', 6013777777, 4, 2, 1,'Cra 178a #15-10', 'Bogota, CO','Norte');
 
 INSERT INTO Ubicacion (direccion, pais) VALUES ('Cra 178a #15-10', 'Bogota, CO');
 

@@ -50,7 +50,7 @@ export const registrarDB = async (req, res) => {
 
     if (tipo === 'desempleado') {
 
-        const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random() * 5), null, null, null])
+        const insercion1 = await pool.query('INSERT INTO Desempleado (usuariodesempleado ,contrasenadesempleado , nombredesempleado , profesion , telefonodesempleado, salario, puntuacionDesempleado, idUbicacion, idHojaVida, idVideo, linkHojaVida, linkVideo, direccion, pais) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *', [usuarioCorreo, contrasena, nombre, profesion, telefono, salario, Math.ceil(Math.random() * 5), null, null, null,cv,video,direccion,pais])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccion, pais])
 
@@ -68,7 +68,7 @@ export const registrarDB = async (req, res) => {
 
     if (tipo === 'empresa') {
 
-        const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random() * 5), null, null])
+        const insercion1 = await pool.query('INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , razonSocial, representanteLegal, telefonoEmpresa, puntuacionEmpresa, idUbicacion, idSede, direccion, pais, sede) VALUES  ($1 , $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *', [nitE, empresaCorreo, contrasenaE, nombreE, razonSocialE, representanteE, telefonoE, Math.ceil(Math.random() * 5), null, null,direccionE, paisE, sedeE])
 
         const insercion2 = await pool.query('INSERT INTO Ubicacion (direccion, pais) VALUES  ($1 , $2) RETURNING *', [direccionE, paisE])
 
@@ -143,7 +143,7 @@ export const agregarVacante = async (req, res) => {
 
     const peticionUbicacion = await pool.query('SELECT direccion, pais FROM Ubicacion WHERE idubicacion = $1', [peticionEmpresa.rows[0].idubicacion])
 
-    const insercionVacante2 = await pool.query('UPDATE Vacante SET nit = $1, idUbicacion = $2, nombreempresa = $3, direccion = $4, pais = $5 WHERE idvacante = $6 RETURNING *', [peticionEmpresa.rows[0].nit, peticionEmpresa.rows[0].idubicacion, usuario,peticionUbicacion.rows[0].direccion,peticionUbicacion.rows[0].pais, insercionVacante.rows[0].idvacante])
+    const insercionVacante2 = await pool.query('UPDATE Vacante SET nit = $1, idUbicacion = $2, nombreempresa = $3, direccion = $4, pais = $5 WHERE idvacante = $6 RETURNING *', [peticionEmpresa.rows[0].nit, peticionEmpresa.rows[0].idubicacion, usuario, peticionUbicacion.rows[0].direccion, peticionUbicacion.rows[0].pais, insercionVacante.rows[0].idvacante])
 
     // res.json(insercionVacante2.rows) // just dev
 }
@@ -156,8 +156,15 @@ export const consultarVacantes = async (req, res) => {
     res.json(peticionVacantes.rows)
 }
 
+
 export const obtenerUsuario = (req, res) => {
     const usuario = req.session.user
-    console.log(usuario)
     res.json(usuario)
+}
+
+
+export const consultarDesempleados = async (req, res) => {
+    const peticionDesempleados = await pool.query('SELECT * FROM Desempleado')
+
+    res.json(peticionDesempleados.rows)
 }
