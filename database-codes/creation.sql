@@ -120,7 +120,7 @@ INSERT INTO Empresa (nit ,usuarioEmpresa , contrasenaEmpresa , nombreEmpresa , r
 VALUES
 (1314 , 'empresa@god.com', '123456', 'Adidas', 'Adonai', 'John Beck', 6013777777, 4, 1, 1);
 
-INSERT INTO Ubicacion (direccion, pais) VALUES ('Cra 178a #15-10 - Bogota', 'Colombia');
+INSERT INTO Ubicacion (direccion, pais) VALUES ('Cra 178a #15-10', 'Bogota, CO');
 
 INSERT INTO Sede (nombreSede, idUbicacion) VALUES ('Norte', '1');
 
