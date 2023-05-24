@@ -74,124 +74,44 @@
                 </div>
                 <div class="widget-body">
                   <div class="widget-categories">
-                    <ul>
-                      <li><a href="#">Empresa<span>(#)</span></a></li>
-                      <li><a href="#">Cargo<span>(#)</span></a></li>
-                      <li><a href="#">Fecha Realización<span>(#)</span></a></li>
-                      <li><a href="#">Aspirante<span>(#)</span></a></li>
-                    </ul>
+                    <div class="input-box-select2">
+                      <div class="select2" id="select2">
+                        <div class="contenido-select2">
+                          <p>Selecciona</p>
+                        </div>
+                        <i class='bx bx-chevron-down'></i>
+                      </div>
+                      <div class="opciones2" id="opciones2">
+                        <a href="#" class="opcion2">
+                          <div class="contenido-opcion2">
+                            <p class="opcionProceso">Cargo</p>
+                          </div>
+                        </a>
+                        <a href="#" class="opcion2">
+                          <div class="contenido-opcion2">
+                            <p class="opcionProceso">Empresa</p>
+                          </div>
+                        </a>
+                        <a href="#" class="opcion2">
+                          <div class="contenido-opcion2">
+                            <p class="opcionProceso">Aspirante</p>
+                          </div>
+                        </a>
+                        <a href="#" class="opcion2">
+                          <div class="contenido-opcion2">
+                            <p class="opcionProceso">Fecha</p>
+                          </div>
+                        </a>
+                      </div>
+                      <input type="hidden" name="cargo" id="inputSelect2" value="">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         <div class="col-xl-8">
-          <div class="row row-gutter-70">
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                <div class="recent-job-item">
-                    <div class="main-content">
-                        <h3 class="title"><a href="#">Cargo</a></h3>
-                        <h4 class="estado-espera">En espera</h4>
-                        <h4 class="estado-activo">Activo</h4>
-                        <h4 class="estado-finalizado">Finalizado</h4>
-                        <p class="desc">Empresa: <br> Aspirante: <br> Fecha: <br> Rando Edad: </p>
-                      </div>
-                  </div>
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                <div class="recent-job-item">
-                    <div class="main-content">
-                        <h3 class="title"><a href="#">Cargo</a></h3>
-                        <h4 class="estado-espera">En espera</h4>
-                        <h4 class="estado-activo">Activo</h4>
-                        <h4 class="estado-finalizado">Finalizado</h4>
-                        <p class="desc">Empresa: <br> Aspirante: <br> Fecha: <br> Rando Edad: </p>
-                      </div>
-                  </div>
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                <div class="recent-job-item">
-                    <div class="main-content">
-                        <h3 class="title"><a href="#">Cargo</a></h3>
-                        <h4 class="estado-espera">En espera</h4>
-                        <h4 class="estado-activo">Activo</h4>
-                        <h4 class="estado-finalizado">Finalizado</h4>
-                        <p class="desc">Empresa: <br> Aspirante: <br> Fecha: <br> Rando Edad: </p>
-                      </div>
-                  </div>
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-6">
-              <!--== Start Blog Post Item ==-->
-              <div class="post-item">
-                
-              </div>
-              <!--== End Blog Post Item ==-->
-            </div>
-            <div class="col-12 text-left">
-              <div class="pagination-area">
-                <nav>
-                  <ul class="page-numbers d-inline-flex">
-                    <li>
-                      <a class="page-number active" href="#">1</a>
-                    </li>
-                    <li>
-                      <a class="page-number" href="#">2</a>
-                    </li>
-                    <li>
-                      <a class="page-number" href="#">3</a>
-                    </li>
-                    <li>
-                      <a class="page-number" href="#">4</a>
-                    </li>
-                    <li>
-                      <a class="page-number next" href="#">
-                        <i class="icofont-long-arrow-right"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
+          <div class="row row-gutter-70" id="procesos">
           </div>
         </div>
         
@@ -226,5 +146,6 @@
 <script src="assets/js/custom.js"></script>
 
 <%- include("components/footer")%>
+<script src="filtroProcesos.js"></script>
   </body>
 </html>

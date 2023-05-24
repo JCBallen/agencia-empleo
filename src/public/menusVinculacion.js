@@ -1,4 +1,4 @@
-const selectCandidato = document.querySelector('#select2');
+/* const selectCandidato = document.querySelector('#select2');
 const opcionesCandidato = document.querySelector('#opciones2');
 const contenidoSelectCandidato = document.querySelector('#select2 .contenido-select2');
 const hiddenInputCandidato = document.querySelector('#inputSelect2');
@@ -38,4 +38,4 @@ document.querySelectorAll('#opciones2 > .opcion2').forEach((opcion) => {
   selectCargo.addEventListener('click', () => {
     selectCargo.classList.toggle('active');
     opcionesCargo.classList.toggle('active');
-  });
+  }); */
