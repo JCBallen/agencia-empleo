@@ -15,7 +15,8 @@ import {
     consultarVacantes,
     obtenerUsuario,
     consultarDesempleados,
-    consultarEmpresas
+    consultarEmpresas,
+    redireccionHome
 } from "../controllers/controller.js";
 
 
@@ -58,5 +59,6 @@ router.get('/consultarDesempleados', consultarDesempleados)
 
 router.get('/consultarEmpresas', consultarEmpresas)
 
+router.get('/redireccionHome', redireccionHome)
 
 export default router

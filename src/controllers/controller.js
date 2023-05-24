@@ -173,3 +173,18 @@ export const consultarEmpresas = async (req, res) => {
     const peticionEmpresas = await pool.query('SELECT * FROM Empresa')
     res.json(peticionEmpresas.rows)
 }
+
+
+export const redireccionHome = (req, res) => {
+    const tipo = req.session.tipo
+
+    if (tipo === 'desempleado') {
+        res.redirect('/homeDesempleado')
+    } else if (tipo === 'empresa') {
+        res.redirect('/homeEmpresa')
+    } else if (tipo === 'agencia') {
+        res.redirect('/homeAgencia')
+    } else {
+        res.redirect('/')
+    }
+}
