@@ -5,11 +5,11 @@ async function traerVacantes() {
   });
   const resultE = await responseE.json();
 
-  const responseU = await fetch("http://localhost:3000/obtenerUsuario", {
+  const responseFullU = await fetch("http://localhost:3000/obtenerUsuario", {
     method: "GET",
   });
-  let resultU = await responseU.json();
-  resultU = resultU.usuario;
+  const resultFullU = await responseFullU.json();
+  const resultU = resultFullU.usuario;
 
   const responseV = await fetch("http://localhost:3000/consultarVacantes", {
     method: "GET",
