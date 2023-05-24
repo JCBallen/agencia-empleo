@@ -42,7 +42,7 @@ async function traerVacantes() {
       div4.innerHTML =
         '<a href="company-details.html"><img src="assets/img/companies/1.jpg" width="75" height="75 alt="Image-HasTech"></a>';
       div5.innerHTML =
-        '<h4 class="name"><a href="/empresa">' +
+        '<h4 class="name"><a href="/empresa">   ' +
         item.nombreempresa +
         '</a></h4><p class="address"><i class="bx bxs-map"></i>' +
         item.pais +
@@ -56,12 +56,12 @@ async function traerVacantes() {
         cargo +
         "</a></h3>" +
         pregrado +
-        '<p class="desc">Fecha Inicio:' +
+        "<br><b>Rando Edad:   </b>" +
+        item.rangoedad +
+        '<p class="desc"><b>Fecha Inicio:   </b>' +
         item.fechainicio +
-        "<br> Fecha Cierre:" +
+        "<br> <b>Fecha Cierre:   </b>" +
         item.fechacierre +
-        "<br> Rando Edad:" +
-        item.rango +
         "</p>";
       div8.innerHTML =
         "<h4>" +

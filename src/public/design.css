@@ -2378,6 +2378,11 @@ table p {
   -o-transition: all 0.3s ease-out;
 }
 
+.recent-job-item:hover {
+  background-color: #ffbb001d;
+  border-color: #eee;
+}
+
 .post-item .recent-job-item{
   background-color: #f4f7f7;
   padding: px;
