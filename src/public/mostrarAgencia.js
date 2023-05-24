@@ -219,7 +219,7 @@ async function traerVacantes() {
       const cargo = resultV.cargo;
       const empresa = resultV.nombreempresa;
       const aspirante = resultD.nombredesempleado;
-      const fecha = "Mayo 24, 2023.";
+      // const fecha = "Mayo 24, 2023.";
 
       // Obtén los valores de los campos de entrada que deseas enviar
 
@@ -227,13 +227,13 @@ async function traerVacantes() {
       const datos = {
         cargo: cargo,
         nombreempresa: empresa,
-        nombredesempleado: aspirante,
-        fecharealizacion: fecha,
+        nombredesempleado: aspirante
+        // fecharealizacion: fecha,
         // Agrega aquí los demás campos y sus valores
       };
 
       // Envía los datos a una URL de destino utilizando una solicitud AJAX
-      fetch("vinculacion", {
+      fetch("http://localhost:3000/vinculacion", {
         method: "POST",
         body: JSON.stringify(datos),
         headers: {

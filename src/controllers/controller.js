@@ -192,19 +192,18 @@ export const redireccionHome = (req, res) => {
 
 export const vinculacion = async (req, res) => {
 
-        const { candidato, cargo } = req.body
+    const { candidato, cargo } = req.body
 
-        const [nombre, profesion] = candidato.split(' ')
-        const [vacante, empresa] = cargo.split(' ')
+    const [nombre, profesion] = candidato.split(' ')
+    const [vacante, empresa] = cargo.split(' ')
 
-        const fechaActual = new Date();
-        const opciones = { day: 'numeric', month: 'numeric', year: 'numeric' };
-        const fechaCompleta = fechaActual.toLocaleDateString(undefined, opciones);
+    const fechaActual = new Date();
+    const opciones = { day: 'numeric', month: 'numeric', year: 'numeric' };
+    const fechaCompleta = fechaActual.toLocaleDateString(undefined, opciones);
 
+    const insercionVacante = await pool.query('INSERT INTO Solicitud (fechaRealizacion, cargo, nombreEmpresa, nombreDesempleado) VALUES ($1, $2, $3, $4) RETURNING *', [fechaCompleta, vacante, empresa, nombre])
 
-        const insercionVacante = await pool.query('INSERT INTO Solicitud (fechaRealizacion, cargo, nombreEmpresa, nombreDesempleado) VALUES ($1, $2, $3, $4) RETURNING *', [fechaCompleta, vacante, empresa, nombre])
-
-        res.redirect('/procesos')
+    res.redirect('/procesos')
 
 }
 
