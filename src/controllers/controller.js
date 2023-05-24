@@ -193,6 +193,8 @@ export const redireccionHome = (req, res) => {
 export const vinculacion = async (req, res) => {
     const { candidato, cargo } = req.body
 
+    console.log(candidato,cargo)
+
     const [nombre, profesion] = candidato.split(' ')
     const [vacante, empresa] = cargo.split(' ')
 
