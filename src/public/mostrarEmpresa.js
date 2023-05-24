@@ -1,16 +1,16 @@
 async function traerVacantes() {
-  const responseE = await fetch("http://localhost:3000/consultarEmpresas", {
+  const responseE = await fetch("https://agencia-empleo.azurewebsites.net/consultarEmpresas", {
     method: "GET",
   });
   const resultE = await responseE.json();
 
-  const responseFullU = await fetch("http://localhost:3000/obtenerUsuario", {
+  const responseFullU = await fetch("https://agencia-empleo.azurewebsites.net/obtenerUsuario", {
     method: "GET",
   });
   const resultFullU = await responseFullU.json();
   const resultU = resultFullU.usuario;
 
-  const responseV = await fetch("http://localhost:3000/consultarVacantes", {
+  const responseV = await fetch("https://agencia-empleo.azurewebsites.net/consultarVacantes", {
     method: "GET",
   });
   const resultV = await responseV.json();

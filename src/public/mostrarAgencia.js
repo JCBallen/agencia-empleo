@@ -1,10 +1,10 @@
 async function traerVacantes() {
-  const response = await fetch("http://localhost:3000/consultarDesempleados", {
+  const response = await fetch("https://agencia-empleo.azurewebsites.net/consultarDesempleados", {
     method: "GET",
   });
   const resultD = await response.json();
 
-  const responseV = await fetch("http://localhost:3000/consultarVacantes", {
+  const responseV = await fetch("https://agencia-empleo.azurewebsites.net/consultarVacantes", {
     method: "GET",
   });
   const resultV = await responseV.json();

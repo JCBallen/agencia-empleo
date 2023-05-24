@@ -3,7 +3,7 @@
 // let result;
 
 async function traerVacantes() {
-  const response = await fetch("http://localhost:3000/consultarProcesos", {
+  const response = await fetch("https://agencia-empleo.azurewebsites.net/consultarProcesos", {
     method: "GET",
   });
   const result = await response.json();

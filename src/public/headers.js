@@ -2,7 +2,7 @@
 const headers = async () => {
 
     const response = await fetch(
-        "http://localhost:3000/obtenerUsuario",
+        "https://agencia-empleo.azurewebsites.net/obtenerUsuario",
         {
             method: "GET",
         }
@@ -17,7 +17,7 @@ const headers = async () => {
 // const headersEmpresa = async () => {
 
 //     const response = await fetch(
-//         "http://localhost:3000/obtenerUsuario",
+//         "https://agencia-empleo.azurewebsites.net/obtenerUsuario",
 //         {
 //             method: "GET",
 //         }
